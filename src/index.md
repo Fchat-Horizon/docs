@@ -5,6 +5,9 @@ layout: home
 hero:
   name: "Horizon"
   tagline: An Opinionated F-Chat Fork
+  image:
+    src: /logo.png
+    alt: Logo
   actions:
     - theme: brand
       text: Download the app
