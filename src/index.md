@@ -6,7 +6,7 @@ hero:
   name: "Horizon"
   tagline: An Opinionated F-Chat Fork
   image:
-    src: /logo.png
+    src: /assets/images/icon.ico
     alt: Logo
   actions:
     - theme: brand

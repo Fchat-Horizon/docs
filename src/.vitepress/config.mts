@@ -12,7 +12,7 @@ export default defineConfig({
       { text: "Changelog", link: "/changelog" },
 
     ],
-    logo: '/icon.ico',
+    logo: '/assets/images/icon.png',
     sidebar: [
       {
         text: "Introduction",
@@ -33,5 +33,6 @@ export default defineConfig({
       { icon: "github", link: "https://github.com/vuejs/vitepress" },
     ],
   },
-  base: "/docs/"
+  base: "/docs/",
+  head: [['link', { rel: 'icon', href: '/docs/assets/images/icon.ico' }]]
 });
