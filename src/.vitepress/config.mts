@@ -29,6 +29,12 @@ export default defineConfig({
         items: [
           { text: "Overview", link: "/docs/features-overview" },
         ],
+      },
+      {
+        text: "Development",
+        items: [
+          { text: "Contributing", link: "/docs/contributing" },
+        ]
       }
     ],
 
