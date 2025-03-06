@@ -17,8 +17,11 @@ export default defineConfig({
       {
         text: "Introduction",
         items: [
-          { text: "Home", link: "/docs" },
-          { text: "Changelog", link: "/changelog"}
+          { text: "Home", link: "/" },
+          { text: "Docs Home", link: "/docs" },
+          { text: "Changelog", link: "/changelog" },
+          { text: "Contact", link: "/contact" },
+
         ],
       },
       {

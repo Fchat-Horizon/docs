@@ -1,6 +1,5 @@
 ---
 outline: deep
-sidebar: true
 ---
 
 # Docs
