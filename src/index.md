@@ -27,7 +27,6 @@ features:
       width: 100%
     title: Character previews
     details: Character previews are shown when you hover over a character
-    link: https://www.google.com'
   - icon:
       src: "/assets/images/link-preview.png"
       alt: "Link preview"
