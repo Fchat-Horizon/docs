@@ -148,8 +148,8 @@
    --vp-c-bg-soft: #292329;
    --vp-c-brand-1: #{color.adjust(#61364b, $lightness: 35%)};
  
-   --vp-c-brand-1: #907281;
-   --vp-c-brand-2: #fff2f9;
+   // --vp-c-brand-1: #907281;
+   --vp-c-brand-2: #{color.adjust($color: #61364b, $lightness: 20%)};
    --vp-c-brand-3: #61364b;
    --vp-c-brand-soft: var(--vp-c-indigo-soft);
  
