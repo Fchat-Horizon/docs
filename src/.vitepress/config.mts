@@ -33,6 +33,5 @@ export default defineConfig({
       { icon: "github", link: "https://github.com/vuejs/vitepress" },
     ],
   },
-  base: "/docs/",
   head: [['link', { rel: 'icon', href: '/docs/assets/images/icon.ico' }]]
 });
