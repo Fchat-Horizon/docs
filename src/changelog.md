@@ -1,3 +1,8 @@
+---
+sidebar: false
+outline: 2
+---
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
