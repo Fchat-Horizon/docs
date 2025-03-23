@@ -78,13 +78,15 @@ onMounted(async () => {
       arch = "x64";
     }
   } else {
-    arch = "x64";
+    // Linux or Windows
     if (/(arm64|aarch64)/i.test(userAgent)) {
       arch = "arm64";
+    } else {
+      arch = "x86_64";
     }
   }
 
-  downloadUrl.value = `https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat-Horizon-${osDetails.value.platform}-${arch}.${fileExtension}`;
+  downloadUrl.value = `https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-${osDetails.value.platform}-${arch}.${fileExtension}`;
 });
 </script>
 
