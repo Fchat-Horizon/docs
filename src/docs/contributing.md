@@ -11,12 +11,13 @@ That being said, *Horizon is an opinionated fork*, and as such we enforce strong
 - [Contributing to Horizon](#contributing-to-horizon)
   - [Where do I start?!](#where-do-i-start)
     - [Technology](#technology)
-    - [Setting up your development enviroment](#setting-up-your-development-enviroment)
+    - [Setting up your development environment](#setting-up-your-development-environment)
     - [Building](#building)
       - [Electron](#electron)
       - [Mobile](#mobile)
     - [Project layout](#project-layout)
       - [Branches](#branches)
+    - [Editing the Documentation](#editing-the-documentation)
       - [Tags](#tags)
 
 ## Where do I start?!
@@ -29,7 +30,7 @@ Horizon is written primarily in *Vue*, *Typescript*, and *Javascript.* You'll ne
 
 You should use Node.js **v22.13.0**.
 
-### Setting up your development enviroment
+### Setting up your development environment
 
 In short, you can run the following commands:
 
@@ -61,7 +62,7 @@ node pack.js
 
 #### Mobile
 
-Mobile builds are currently unsupported, but if you're up to the challange, *maybe you can fix it?*
+Mobile builds are currently unsupported, but if you're up to the challenge, *maybe you can fix it?*
 
 Look at the `mobile` directory for more info. For `android`, we recommend you use android studio to make your life more pleasent.
 
@@ -83,6 +84,18 @@ Look at the `mobile` directory for more info. For `android`, we recommend you us
 
 - **experimental/\*** (optional)  
   For experimental changes that may not be merged immediately, create branches with the prefix `experimental/`.
+
+### Editing the Documentation
+
+Our documentation lives in a separate repo `docs` at [Fchat-Horizon/docs](https://github.com/Fchat-Horizon/docs) and uses **[VitePress](https://vitepress.dev/)**.
+
+To preview the docs locally:
+
+```sh
+cd src
+pnpm install
+pnpm docs:dev
+```
 
 #### Tags
 
