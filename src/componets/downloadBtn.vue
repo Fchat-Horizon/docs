@@ -73,18 +73,15 @@ onMounted(async () => {
   let arch = "x64";
 
   if (osDetails.value.name === "Mac OS") {
-    arch = "m1";
-    if (/intel/i.test(userAgent)) {
-      arch = "x64";
-    }
+    arch = "universal";
   } else {
-    arch = "x64";
+    arch = osDetails.value.platform === "linux" ? "x86_64" : "x64";
     if (/(arm64|aarch64)/i.test(userAgent)) {
       arch = "arm64";
     }
   }
 
-  downloadUrl.value = `https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat-Horizon-${osDetails.value.platform}-${arch}.${fileExtension}`;
+  downloadUrl.value = `https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-${osDetails.value.platform}-${arch}.${fileExtension}`;
 });
 </script>
 
