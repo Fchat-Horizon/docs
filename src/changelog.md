@@ -88,8 +88,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Build system now uses electron-builder [[Commit]](https://github.com/Fchat-Horizon/Horizon/commit/d30700d09f0ae2fe3620005d05250b9ee82685fd)
-- [CONTRIBUTING.md](/CONTRIBUTING.md) has been updated to reflect the new build system
-- [Build scripts](/electron/release-scripts/) are now functionally more robust.
+- [CONTRIBUTING.md](https://github.com/Fchat-Horizon/Horizon/blob/main/CONTRIBUTING.md) has been updated to reflect the new build system
+- [Build scripts](https://github.com/Fchat-Horizon/Horizon/tree/main/electron/release-scripts) are now functionally more robust.
 
 ### Merged Pull Requests
 
