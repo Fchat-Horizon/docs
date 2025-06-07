@@ -26,14 +26,14 @@ features:
       height: 100%
       width: 100%
     title: Character previews
-    details: Character previews are shown when you hover over a character
+    details: Character previews are shown when you hover over a character.
   - icon:
       src: "/assets/images/link-preview.png"
       alt: "Link preview"
       height: 100%
       width: 100%
     title: Link previews
-    details: Character previews are shown when you hover over a character
+    details: Link previews are shown when you hover over a link.
   - icon:
       src: "/assets/images/improved-search.png"
       alt: "Character matching"
