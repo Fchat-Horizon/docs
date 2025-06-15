@@ -40,4 +40,10 @@ features:
       width: 100%
     title: Character matching
     details: Matches characters with you, whilst staying out of the way.
+  - icon:
+      src: "/assets/images/memory-usage.png"
+      alt: "Memory ussage"
+      width: 100%
+    title: Performant and polished
+    details: Increased performance, and with many fixed bugs compared to Rising.
 ---
