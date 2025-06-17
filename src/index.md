@@ -13,7 +13,7 @@ hero:
       text: Download the app
       link: /download
     - theme: alt
-      text: Docs
+      text: Docs and Wiki
       link: /docs
     - theme: alt
       text: Changelog
