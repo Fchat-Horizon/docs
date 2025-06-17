@@ -32,7 +32,7 @@ Setting a custom high quality avatar for yourself is similarly easy. Just add th
 For backwards compatability with Rising users, ``Rising Portrait`` is also still supported.
 
 
-For security reasons, only the following domains are supported:
+For security reasons, only the following domains are currently whitelisted for support:
 
 - ``static.f-list.net``
 - ``iili.io``
