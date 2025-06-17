@@ -36,6 +36,9 @@ Inside the `fchat` folder there should be a folder called `data`, here you shoul
 > No character folders in the F-chat data folder?
 > Check that you haven't changed the log save location in the settings: ⚙️ > F-Chat > Change log location.
 
-Horizon uses the same kind of folder structure, so if you have already started the app, inside the `horizon-electron` folder you should also find a `data` folder. You can simply copy the folders for your characters from Rising's `data` folder into Horizon's `data` folder, and if you restart Horizon it should load the logs like usual.
+Horizon uses the same kind of folder structure, so if you have already started the app once, inside the `horizon-electron` folder you should also find a `data` folder. You can simply copy the folders for your characters from Rising's `data` folder into Horizon's `data` folder, and if you restart Horizon it should load the logs like usual.
 
 ![alt text](images/moving-from-rising/horizon-data.png)
+
+> [!WARNING]
+> Please don't copy over files like ``eicons.json``, ``window.json`` or ``settings``. The formats they're in might not be compatible with current versions of Horizon and could break things.
