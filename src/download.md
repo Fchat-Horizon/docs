@@ -1,7 +1,7 @@
 ---
 title: "Download"
-description: "Download F‑Chat Horizon"
-layout: home    
+description: "Download Horizon"
+layout: home
 ---
 
 <script setup>
@@ -12,11 +12,11 @@ import downloadButt from './componets/downloadBtn.vue'
   
 # Download
 
-Download the latest release of **F‑Chat Horizon**.
+Download the latest release of **Horizon**.
 
 <downloadButt />
 
-
+Need help installing? Check out the [installation guide](docs/guides/install).
 
 </div>
 
