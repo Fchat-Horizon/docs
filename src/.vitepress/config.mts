@@ -8,7 +8,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },
-      { text: "Docs", link: "/docs" },
+      { text: "Docs", link: "/docs/" },
       { text: "Changelog", link: "/changelog" },
     ],
     logo: "/assets/images/icon.png",
@@ -16,9 +16,8 @@ export default defineConfig({
       {
         text: "Introduction",
         items: [
-          { text: "Home", link: "/" },
+          { text: "Docs Home", link: "/docs/" },
           { text: "Installing Horizon", link: "/docs/guides/install" },
-          { text: "Docs Home", link: "/docs" },
           { text: "Changelog", link: "/changelog" },
           { text: "Contact", link: "/contact" },
         ],
