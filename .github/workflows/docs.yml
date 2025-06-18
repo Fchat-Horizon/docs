@@ -32,6 +32,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - name: Install pnpm
       uses: pnpm/action-setup@v4
     - name: Setup Node
