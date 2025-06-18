@@ -4,6 +4,7 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "Horizon",
   description: "Horizon Docs",
+  lastUpdated: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -47,6 +48,12 @@ export default defineConfig({
         items: [{ text: "Contributing", link: "/docs/contributing" }],
       },
     ],
+    lastUpdated: {
+      formatOptions: {
+        dateStyle: 'long',
+        timeStyle: 'short'
+      }
+    },
 
     socialLinks: [
       { icon: "github", link: "https://github.com/Fchat-Horizon/Horizon" },
