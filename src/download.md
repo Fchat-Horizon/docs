@@ -18,6 +18,8 @@ Download the latest release of **Horizon**.
 
 Need help installing? Check out the [installation guide](docs/guides/install).
 
+Looking for a specific version or platform? Check out our [GitHub releases](https://github.com/Fchat-Horizon/Horizon/releases).
+
 </div>
 
 <style lang="scss">
