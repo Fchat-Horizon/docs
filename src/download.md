@@ -4,17 +4,24 @@ description: "Download Horizon"
 layout: home
 ---
 
-<script setup>
-import downloadButt from './componets/downloadBtn.vue'
+<script setup lang="ts">
+import downloadButt from './componets/downloadBtn.vue';
+
+let ver: string | null = null;
+
+if (typeof window !== 'undefined') {
+  const urlParams = new URLSearchParams(window.location.search);
+  ver = urlParams.get('ver');
+}
 </script>
 
 <div class="download-container">
   
 # Download
 
-Download the latest release of **Horizon**.
+Download {{ ver || 'the latest release ' }} of **Horizon**.
 
-<downloadButt />
+<downloadButt :version="ver"/>
 
 Need help installing? Check out the [installation guide](docs/guides/install).
 

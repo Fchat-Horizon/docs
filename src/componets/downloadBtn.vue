@@ -10,8 +10,7 @@ import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { ref, onMounted } from "vue";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
-defineProps<{ manualOS ?: string }>();
-
+const props = defineProps<{ manualOS?: string; version?: string }>();
 
 const osDetails = ref<{
   name: string;
@@ -23,24 +22,25 @@ const osDetails = ref<{
   icon: faQuestionCircle,
 });
 const downloadUrl = ref("");
-const latestVersion = ref("");
+const downloadVersion = ref("");
 
-// Fetch the latest release tag from GitHub
-const fetchLatestRelease = async () => {
+async function validateVersionParam() {
   try {
     const response = await fetch(
-      "https://api.github.com/repos/Fchat-Horizon/Horizon/releases/latest"
+      "https://api.github.com/repos/Fchat-Horizon/Horizon/releases/tags/" +
+        props.version,
     );
     const data = await response.json();
-    latestVersion.value = data.tag_name; // Get the latest release tag
+    downloadVersion.value = data.tag_name;
   } catch (error) {
-    console.error("Error fetching the latest release:", error);
-    latestVersion.value = "latest"; // Fallback in case of an error
+    console.error("Error fetching the specified release:", error);
+    downloadVersion.value = undefined;
   }
-};
+}
 
 onMounted(async () => {
-  await fetchLatestRelease();
+  //await fetchLatestRelease();
+  await validateVersionParam();
 
   const userAgent = navigator.userAgent.toLowerCase();
 
@@ -81,7 +81,10 @@ onMounted(async () => {
     }
   }
 
-  downloadUrl.value = `https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-${osDetails.value.platform}-${arch}.${fileExtension}`;
+  //Yes, this is kind of ugly. But these two URLs have a different format.
+  downloadUrl.value = downloadVersion.value
+    ? `https://github.com/Fchat-Horizon/Horizon/releases/download/${props.version}/F-Chat.Horizon-${osDetails.value.platform}-${arch}.${fileExtension}`
+    : `https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-${osDetails.value.platform}-${arch}.${fileExtension}`;
 });
 </script>
 
@@ -109,7 +112,10 @@ button {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-family: Consolas, Courier New, monospace;
+  font-family:
+    Consolas,
+    Courier New,
+    monospace;
   border: solid #404c5d 1px;
   font-size: 18px;
   color: rgb(161, 161, 161);
@@ -117,33 +123,53 @@ button {
   transition: 500ms;
   border-radius: 5px;
   background: linear-gradient(145deg, #2e2d2d, #212121);
-  -webkit-box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b,
-    inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
-  box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b,
-    inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
+  -webkit-box-shadow:
+    -1px -5px 15px #41465b,
+    5px 5px 15px #41465b,
+    inset 5px 5px 10px #212121,
+    inset -5px -5px 10px #212121;
+  box-shadow:
+    -1px -5px 15px #41465b,
+    5px 5px 15px #41465b,
+    inset 5px 5px 10px #212121,
+    inset -5px -5px 10px #212121;
 }
 
 .dark {
- button {
-  background: linear-gradient(145deg, #1c191c, #212121);
-  -webkit-box-shadow: -1px -5px 15px #61364b, 5px 5px 15px #61364b,
-    inset 5px 5px 10px #292329, inset -5px -5px 10px #292329;
-  box-shadow: -1px -5px 15px #61364b, 5px 5px 15px #61364b,
-    inset 5px 5px 10px #292329, inset -5px -5px 10px #292329;
- }
+  button {
+    background: linear-gradient(145deg, #1c191c, #212121);
+    -webkit-box-shadow:
+      -1px -5px 15px #61364b,
+      5px 5px 15px #61364b,
+      inset 5px 5px 10px #292329,
+      inset -5px -5px 10px #292329;
+    box-shadow:
+      -1px -5px 15px #61364b,
+      5px 5px 15px #61364b,
+      inset 5px 5px 10px #292329,
+      inset -5px -5px 10px #292329;
+  }
 }
 
 button:hover {
-  -webkit-box-shadow: 1px 1px 13px #61364b, -1px -1px 13px #907281;
-  box-shadow: 1px 1px 13px #61364b, -1px -1px 13px #907281;
+  -webkit-box-shadow:
+    1px 1px 13px #61364b,
+    -1px -1px 13px #907281;
+  box-shadow:
+    1px 1px 13px #61364b,
+    -1px -1px 13px #907281;
   color: #d6d6d6;
   -webkit-transition: 500ms;
   transition: 500ms;
 }
 
 button:active {
-  -webkit-box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #545b78;
-  box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #545b78;
+  -webkit-box-shadow:
+    1px 1px 13px #20232e,
+    -1px -1px 33px #545b78;
+  box-shadow:
+    1px 1px 13px #20232e,
+    -1px -1px 33px #545b78;
   color: #d6d6d6;
   -webkit-transition: 100ms;
   transition: 100ms;
