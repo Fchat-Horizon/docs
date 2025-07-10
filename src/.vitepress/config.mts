@@ -58,6 +58,14 @@ export default defineConfig({
             text: "Custom name colors and avatars",
             link: "/docs/guides/colors-and-avatars",
           },
+          {
+            text: "Quality of life changes",
+            link: "/docs/quality-of-life",
+          },
+          {
+            text: "Rising Features",
+            link: "/docs/rising",
+          },
         ],
       },
       {
