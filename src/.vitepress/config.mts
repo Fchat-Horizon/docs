@@ -1,4 +1,26 @@
 import { defineConfig } from "vitepress";
+import fs from "fs";
+import path from "path";
+
+function getChangelogSidebarItems() {
+  const changelogDir = path.resolve(__dirname, "../docs/changelogs");
+  if (!fs.existsSync(changelogDir)) return [];
+
+  return fs
+    .readdirSync(changelogDir)
+    .filter((file) => file.endsWith(".md"))
+    .map((file) => {
+      const name = file.replace(/\.md$/, "");
+      // Optionally, make the text more readable:
+      const text = name
+        .replace(/-/g, " ")
+        .replace(/\b\w/g, (l) => l.toUpperCase());
+      return {
+        text,
+        link: `/docs/changelogs/${name}`,
+      };
+    }).reverse();
+}
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -10,7 +32,7 @@ export default defineConfig({
     nav: [
       { text: "Home", link: "/" },
       { text: "Docs", link: "/docs/" },
-      { text: "Changelog", link: "/changelog" },
+      { text: "Changelogs",items: getChangelogSidebarItems()},
     ],
     logo: "/assets/images/icon.png",
     sidebar: [
@@ -19,7 +41,12 @@ export default defineConfig({
         items: [
           { text: "Docs Home", link: "/docs/" },
           { text: "Installing Horizon", link: "/docs/guides/install" },
-          { text: "Changelog", link: "/changelog" },
+          {
+            text: "Changelogs",
+            link: "/changelog",
+            collapsed: true,
+            items: getChangelogSidebarItems(),
+          },
           { text: "Contact", link: "/contact" },
         ],
       },
@@ -50,9 +77,9 @@ export default defineConfig({
     ],
     lastUpdated: {
       formatOptions: {
-        dateStyle: 'long',
-        timeStyle: 'short'
-      }
+        dateStyle: "long",
+        timeStyle: "short",
+      },
     },
 
     socialLinks: [
