@@ -92,6 +92,7 @@ export default defineConfig({
 
     socialLinks: [
       { icon: "github", link: "https://github.com/Fchat-Horizon/Horizon" },
+      { icon: "discord", link: "https://discord.gg/JYuxqNVNtP" },
     ],
   },
   head: [["link", { rel: "icon", href: "/assets/images/icon.ico" }]],
