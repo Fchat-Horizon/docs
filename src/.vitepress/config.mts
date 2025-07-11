@@ -29,6 +29,10 @@ export default defineConfig({
   lastUpdated: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    editLink: {
+      pattern: 'https://github.com/Fchat-Horizon/docs/edit/main/src/:path',
+      text: 'Edit on GitHub'
+    },
     nav: [
       { text: "Home", link: "/" },
       { text: "Docs", link: "/docs/" },
