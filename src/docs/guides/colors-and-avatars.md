@@ -41,3 +41,4 @@ For security reasons, only the following domains are currently whitelisted for s
 - ``freeimage.host``
 - ``redgifs.com``
 - ``imgchest.com``
+- ``f2.toyhou.se``
