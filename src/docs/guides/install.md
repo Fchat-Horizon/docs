@@ -18,15 +18,15 @@ On an ARM device like a Microsoft Surface? A native ARM version should be availa
 
 ## Linux
 
-### Debian/Ubuntu (deb)
+###
 
-1. Download the `.deb` file for your architecture.
-   - [Linux x64 .deb](https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-linux-amd64.deb)
-   - [Linux arm64 .deb](https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-linux-arm64.deb)
-2. Install:
-   ```bash
-   sudo dpkg -i F-Chat.Horizon-linux-<arch>.deb
-   ```
+| Distro                                                                                                      | Info                                                                                                                                     | Maintainer(s)              |
+| ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
+| ![Gentoo](https://img.shields.io/badge/Gentoo-54487A?style=for-the-badge&logo=gentoo&logoColor=white)       | [link](https://github.com/Fchat-Horizon/gentoo/tree/0dbb49c0a2010d9a1813b5495fb78e1178494b14)                                            | @CodingWithAnxiety         |
+| ![Arch](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=fff&style=for-the-badge) | [![AUR package](https://repology.org/badge/version-for-repo/aur/fchat-horizon.svg)](https://repology.org/project/fchat-horizon/versions) | astrayblackcat, KenwoodFox |
+| ![Debian](https://img.shields.io/badge/Debian-D70A53?style=for-the-badge&logo=debian&logoColor=white)       | [Available under releases](https://github.com/Fchat-Horizon/Horizon/releases/latest)                                                     | The Horizon Developers     |
+
+Feel like an option tailored to your distro of choice is missing? Don't be shy and request, or even contribute it on our [GitHub](https://github.com/Fchat-Horizon/Horizon).
 
 ### AppImage
 
@@ -37,6 +37,16 @@ On an ARM device like a Microsoft Surface? A native ARM version should be availa
    ```bash
    chmod +x F-Chat.Horizon-linux-<arch>.AppImage
    ./F-Chat.Horizon-linux-<arch>.AppImage
+   ```
+
+### Debian/Ubuntu (deb)
+
+1. Download the `.deb` file for your architecture.
+   - [Linux x64 .deb](https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-linux-amd64.deb)
+   - [Linux arm64 .deb](https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-linux-arm64.deb)
+2. Install:
+   ```bash
+   sudo dpkg -i F-Chat.Horizon-linux-<arch>.deb
    ```
 
 ### Tarball (tar.gz)
