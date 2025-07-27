@@ -20,3 +20,7 @@ Leave a note here!
 
 Report bugs or feature requests here!
 [Horizon](https://github.com/Fchat-Horizon/Horizon/issues)
+
+## Discord
+
+We also have a [Discord server](https://discord.gg/JYuxqNVNtP). Stop by to talk about ideas, issues or just to say hi!
