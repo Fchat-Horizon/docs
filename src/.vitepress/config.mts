@@ -19,7 +19,8 @@ function getChangelogSidebarItems() {
         text,
         link: `/docs/changelogs/${name}`,
       };
-    }).reverse();
+    })
+    .reverse();
 }
 
 // https://vitepress.dev/reference/site-config
@@ -30,13 +31,13 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     editLink: {
-      pattern: 'https://github.com/Fchat-Horizon/docs/edit/main/src/:path',
-      text: 'Edit on GitHub'
+      pattern: "https://github.com/Fchat-Horizon/docs/edit/main/src/:path",
+      text: "Edit on GitHub",
     },
     nav: [
       { text: "Home", link: "/" },
       { text: "Docs", link: "/docs/" },
-      { text: "Changelogs",items: getChangelogSidebarItems()},
+      { text: "Changelogs", items: getChangelogSidebarItems() },
     ],
     logo: "/assets/images/icon.png",
     sidebar: [
@@ -80,6 +81,7 @@ export default defineConfig({
             link: "/docs/guides/moving-from-rising",
           },
           { text: "Backing up your data", link: "/docs/guides/backup" },
+          { text: "Creating sound themes", link: "/docs/guides/sound-themes" },
         ],
       },
       {
