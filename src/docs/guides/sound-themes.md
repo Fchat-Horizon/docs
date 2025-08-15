@@ -177,7 +177,7 @@ If you're unsure where F-Chat Horizon is installed:
 3. Go to `Settings → Notifications → Sound Theme` and select your theme
 4. Test different events to ensure all sounds work correctly (Will eventually add buttons to easily test.)
 
-## Submissing
+## Submitting themes
 
 ### Packaging
 - Create a zip or 7z archive containing your theme folder
