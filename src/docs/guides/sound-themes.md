@@ -1,5 +1,8 @@
 # Sound Theme Creation Guide
 
+> [!NOTE]  
+> This page is about a feature slated for release in an upcoming release. Though you can test it right now by enabling beta updates in the settings, it might change by the time the update gets properly released and this page might not be fully accurate anymore.
+
 ## Overview
 
 Sound themes allow you to customize the audio experience in F-Chat Horizon without modifying the source code. This guide will walk you through creating your own sound theme.
@@ -61,12 +64,14 @@ The `sound.json` file defines your theme's metadata and sound mappings.
 ### Configuration Fields
 
 #### Metadata
+
 - **name**: The display name shown in the settings UI
 - **version**: Theme version (start at "1.0.0")
 - **description**: Brief description of your theme
 - **author**: Your name or username
 
 #### Sound Mappings
+
 The `sounds` object maps each sound event to an audio file (without extension):
 
 - **attention**: Played for attention-grabbing events
@@ -79,17 +84,20 @@ The `sounds` object maps each sound event to an audio file (without extension):
 - **system**: Played for system messages
 
 #### Audio Formats
+
 - **preferred**: The main audio format to use
 - **fallback**: Array of backup formats in order of preference
 
 ## Audio Requirements
 
 ### Supported Formats
+
 - **OGG Vorbis** (recommended for best compatibility)
 - **MPEG** (mp3 files, widely supported)
 - **WAV** (uncompressed)
 
 ### File Naming
+
 - Files should match the keys in your `sounds` configuration
 - Don't include the file extension in the JSON (e.g., use `"attention"` not `"attention.ogg"`)
 - The client will automatically look for files with your preferred and fallback extensions
@@ -97,6 +105,7 @@ The `sounds` object maps each sound event to an audio file (without extension):
 ## Advanced Features
 
 ### Custom Sound Mappings
+
 You can map sounds to different files or reuse the same file for multiple events:
 
 ```json
@@ -115,6 +124,7 @@ You can map sounds to different files or reuse the same file for multiple events
 ```
 
 ### Multiple Format Support
+
 If you want to provide multiple formats, include them in your `sounds/` directory:
 
 ```
@@ -128,6 +138,7 @@ sounds/
 ```
 
 ### Minimal Fallback Setup
+
 If you only want to provide one format, set an empty fallback array:
 
 ```json
@@ -144,7 +155,9 @@ If you only want to provide one format, set an empty fallback array:
 Sound themes need to be placed in the correct directory within your F-Chat Horizon installation. The location varies depending on your operating system:
 
 ### Full Path Structure
+
 The sound themes are located at:
+
 ```
 <installdir>/resources/app.asar.unpacked/sound-themes/
 ```
@@ -152,18 +165,22 @@ The sound themes are located at:
 ### Installation Directory by OS
 
 **Windows:**
+
 - Usually: `C:\Program Files\Horizon\`
 - Full path: `C:\Program Files\Horizon\resources\app.asar.unpacked\sound-themes\`
 
 **macOS:**
+
 - Usually: `/Applications/Horizon/`
 - Full path: `/Applications/Horizon/resources/app.asar.unpacked/sound-themes/`
 
 **Linux:**
+
 - Usually: `/opt/Horizon/` or `/usr/local/bin/Horizon/`
 - Full path: `/opt/Horizon/resources/app.asar.unpacked/sound-themes/`
 
 ### Finding Your Installation
+
 If you're unsure where F-Chat Horizon is installed:
 
 1. **Windows**: Check Program Files or Program Files (x86)
@@ -180,17 +197,19 @@ If you're unsure where F-Chat Horizon is installed:
 ## Submitting themes
 
 ### Packaging
+
 - Create a zip or 7z archive containing your theme folder
 - The archive should contain the theme folder with `sound.json` and `sounds/` directory
 - Name your archive clearly (e.g., `my-awesome-theme.zip`)
 
 ### Before Submitting
+
 - [ ] Test all sounds in the application
 - [ ] Ensure all required sound files are present
 - [ ] Verify your `sound.json` syntax is valid
 
 ### Submission
+
 Submit your packaged theme archive in the #sound-theme-submissions channel.
 
-
-### Happy theming! 
+### Happy theming!
