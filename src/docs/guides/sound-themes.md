@@ -1,11 +1,11 @@
 # Sound Theme Creation Guide
 
-> [!NOTE]  
-> This page is about a feature slated for release in an upcoming release. Though you can test it right now by enabling beta updates in the settings, it might change by the time the update gets properly released and this page might not be fully accurate anymore.
+> [!WARNING]  
+> This page is about a feature slated for release in an upcoming version. Adding your own sound themes is currently not supported, but will be soon.
 
 ## Overview
 
-Sound themes allow you to customize the audio experience in F-Chat Horizon without modifying the source code. This guide will walk you through creating your own sound theme.
+Sound themes allow you to customize the audio experience in Horizon without modifying the source code. This guide will walk you through creating your own sound theme.
 
 ## Quick Start
 
