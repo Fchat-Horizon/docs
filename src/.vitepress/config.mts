@@ -82,6 +82,7 @@ export default defineConfig({
           },
           { text: "Backing up your data", link: "/docs/guides/backup" },
           { text: "Creating sound themes", link: "/docs/guides/sound-themes" },
+          { text: "Custom user styles", link: "/docs/guides/custom-css" },
         ],
       },
       {
