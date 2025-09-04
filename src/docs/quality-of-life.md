@@ -31,6 +31,18 @@ As of writing, all of the settings in the character-specific settings screen (th
 
 ## More keyboard shortcuts
 
+Press Ctrl + T to quickly search for conversations, like a real keyboard pro. Press Ctrl + D for a color picker.
+
+Using the Alt key with the up and down arrows lets you scroll through conversations like in Discord, or combine this with the Shift, or Control + Shift keys to switch between unread and mentioned channels.
+
+Coming soon, you'll even get keyboard shortcuts for quickly picking specific Eicons, or previewing your message's bbcode.
+
+## Automatic sign-in and quick character select
+
+## Eicon collages synced
+
+
+
 ## So many old bugs squashed
 
 ## And so much more planned...

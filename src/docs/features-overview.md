@@ -2,25 +2,24 @@
 outline: deep
 ---
 
-## Features
+# Features
+
+> [!INFO]
+> This page is still a major work in progress, or a stub.
 
 Horizon contains a lot of features— A lot of which can be disabled if you don't want them! A non exhaustive list is as follows:
 
-### Profile Matching
-Horizon automatically compares your profile with others on a score-based system to help you find suitable partners at a glance
+Come from 3.0, or you don't even know what a "Rising" is? Take a look at [what else you're getting](rising). Check out the general [quality of life changes](quality-of-life) while you're at it too.
 
-### Automatic ad posting
-Lazy? Need to step away for a bit? Automated ad posting will post ads for you, and randomly select them from a pool of your choice.
+## More customization
 
-### Link previews
-Links are previewed when hovering, and can even be pinned to the screen!
+extra sound themes (soon make own), custom css, more granular settings
+Horizon comes with a whole bunch of extra themes— that you can even sync with your computer's light/ dark mode, to give you something that really suits your tastes. Not enough options? You can even write your own custom CSS to style everything *just* the way you like it.
 
-### Caching
-Profiles load faster and take less resources to load
+You can even pick various sound themes for your notifications and, in the future, make your own sound packs with ease.
 
-### Smart filters (Beta)
-Allows you to hide what you don't want, and show what you do.
 
-### Custom character colors & High quality portraits
+
+## Custom character colors & High quality portraits
 Want high quality portraits? Simply place `[url=link.to.url.com]Horizon Portrait[/url]` in your characters bio. Want a custom color? Do `[color=colorname]Horizon Color[/color]` to set one as well!
 

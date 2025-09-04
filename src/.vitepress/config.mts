@@ -45,6 +45,7 @@ export default defineConfig({
         text: "Introduction",
         items: [
           { text: "Docs Home", link: "/docs/" },
+          { text: "Frequently Asked Questions", link: "/docs/faq" },
           { text: "Installing Horizon", link: "/docs/guides/install" },
           {
             text: "Changelogs",
@@ -59,10 +60,6 @@ export default defineConfig({
         text: "Features",
         items: [
           { text: "Overview", link: "/docs/features-overview" },
-          {
-            text: "Custom name colors and avatars",
-            link: "/docs/guides/colors-and-avatars",
-          },
           {
             text: "Quality of life changes",
             link: "/docs/quality-of-life",
@@ -81,6 +78,10 @@ export default defineConfig({
             link: "/docs/guides/moving-from-rising",
           },
           { text: "Backing up your data", link: "/docs/guides/backup" },
+          {
+            text: "Custom name colors and avatars",
+            link: "/docs/guides/colors-and-avatars",
+          },
           { text: "Creating sound themes", link: "/docs/guides/sound-themes" },
           { text: "Custom user styles", link: "/docs/guides/custom-css" },
         ],
