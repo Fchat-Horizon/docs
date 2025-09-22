@@ -18,8 +18,12 @@ Horizon comes with a whole bunch of extra themes— that you can even sync with 
 
 You can even pick various sound themes for your notifications and, in the future, make your own sound packs with ease.
 
-
-
 ## Custom character colors & High quality portraits
 Want high quality portraits? Simply place `[url=link.to.url.com]Horizon Portrait[/url]` in your characters bio. Want a custom color? Do `[color=colorname]Horizon Color[/color]` to set one as well!
+
+## Improved Rising features
+
+- Pinning statuses in your status history
+- Automatic ads can now have a custom posting interval
+- The profile analyzer has been worked into your own profile, and now gives you more clarity in what the matcher does.
 
