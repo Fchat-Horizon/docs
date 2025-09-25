@@ -28,6 +28,8 @@ If you need to restore this old backup for whatever reason, you can just do the 
 
 ### Extra info
 
+Your log location can affect how smooth the app runs. If you're saving your logs to a very slow USB drive, you might experience a lot of slowdown when certain channels are becoming more or less active. OneDrive on Windows has been known to be very problematic for this, so if you want to use that to safeguard your logs, you should probably backup your logs to there instead of setting OneDrive as your log folder in Horizon's settings!
+
 Note that conversations are stored in a single file per partner or channel (ie. if your profile is called "Freddy", your logs for your conversation with a character called "Michael" will be saved in the files `Freddy/logs/michael` and `Freddy/logs/michael.idx`. This means that you can't "merge" two log files for the same conversation partners together, and can only overwrite them.
 
 Logs for public rooms (the ones made by users, not staff) are stored with their code name instead of the channel name, usually starting with `#adh-`. This is because people can technically make multiple rooms with the same name, and this is how F-List's server tracks them. This is kind of confusing, but it's also the only way we can actually make sure that the logs you see when you rejoin a channel are actually from that same channel.
