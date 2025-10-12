@@ -49,6 +49,12 @@ Feel like an option tailored to your distro of choice is missing? Don't be shy a
    sudo dpkg -i F-Chat.Horizon-linux-<arch>.deb
    ```
 
+   OR
+
+   ```bash
+   sudo apt install ./F-Chat.Horizon-linux-<arch>.deb
+   ```
+
 ### Tarball (tar.gz)
 
 1. Download the `.tar.gz` for your architecture:
