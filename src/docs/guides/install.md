@@ -20,11 +20,12 @@ On an ARM device like a Microsoft Surface? A native ARM version should be availa
 
 ###
 
-| Distro                                                                                                      | Info                                                                                                                                     | Maintainer(s)              |
-| ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
-| ![Gentoo](https://img.shields.io/badge/Gentoo-54487A?style=for-the-badge&logo=gentoo&logoColor=white)       | [link](https://github.com/Fchat-Horizon/gentoo/tree/0dbb49c0a2010d9a1813b5495fb78e1178494b14)                                            | @CodingWithAnxiety         |
-| ![Arch](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=fff&style=for-the-badge) | [![AUR package](https://repology.org/badge/version-for-repo/aur/fchat-horizon.svg)](https://repology.org/project/fchat-horizon/versions) | astrayblackcat, KenwoodFox |
-| ![Debian](https://img.shields.io/badge/Debian-D70A53?style=for-the-badge&logo=debian&logoColor=white)       | [Available under releases](https://github.com/Fchat-Horizon/Horizon/releases/latest)                                                     | The Horizon Developers     |
+| Distro                                                                                                                                                                                                                    | Info                                                                                                                                     | Maintainer(s)                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| ![Gentoo](https://img.shields.io/badge/Gentoo-54487A?style=for-the-badge&logo=gentoo&logoColor=white)                                                                                                                     | [link](https://github.com/Fchat-Horizon/gentoo/tree/0dbb49c0a2010d9a1813b5495fb78e1178494b14)                                            | @CodingWithAnxiety                             |
+| ![Arch](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=fff&style=for-the-badge) <br> ![Manjaro](https://img.shields.io/badge/Manjaro-35BF5C?style=for-the-badge&logo=Manjaro&logoColor=white) | [![AUR package](https://repology.org/badge/version-for-repo/aur/fchat-horizon.svg)](https://repology.org/project/fchat-horizon/versions) | astrayblackcat, KenwoodFox, @CodingWithAnxiety |
+| ![Debian](https://img.shields.io/badge/Debian-D70A53?style=for-the-badge&logo=debian&logoColor=white) <br> ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)          | [Available under releases](https://github.com/Fchat-Horizon/Horizon/releases/latest)                                                     | The Horizon Developers                         |
+| ![Fedora](https://img.shields.io/badge/Fedora-294172?style=for-the-badge&logo=fedora&logoColor=white) <br> ![openSUSE](https://img.shields.io/badge/openSUSE-%2364B345?style=for-the-badge&logo=openSUSE&logoColor=white) | [Available under releases](https://github.com/Fchat-Horizon/Horizon/releases/latest)                                                     | The Horizon Developers                         |
 
 Feel like an option tailored to your distro of choice is missing? Don't be shy and request, or even contribute it on our [GitHub](https://github.com/Fchat-Horizon/Horizon).
 
@@ -45,6 +46,7 @@ Feel like an option tailored to your distro of choice is missing? Don't be shy a
    - [Linux x64 .deb](https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-linux-amd64.deb)
    - [Linux arm64 .deb](https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-linux-arm64.deb)
 2. Install:
+
    ```bash
    sudo dpkg -i F-Chat.Horizon-linux-<arch>.deb
    ```
@@ -54,6 +56,25 @@ Feel like an option tailored to your distro of choice is missing? Don't be shy a
    ```bash
    sudo apt install ./F-Chat.Horizon-linux-<arch>.deb
    ```
+
+#### Fedora/RPM-based (rpm)
+
+1. Download the `.rpm` file for your architecture:
+   - [Linux x64 .rpm](https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-linux-x86_64.rpm)
+   - [Linux arm64 .rpm](https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-linux-arm64.rpm)
+2. Install using your package manager:
+   - **Fedora/RHEL/CentOS:**
+     ```bash
+     sudo dnf install F-Chat.Horizon-linux-<arch>.rpm
+     ```
+   - **openSUSE:**
+     ```bash
+     sudo zypper install F-Chat.Horizon-linux-<arch>.rpm
+     ```
+   - **Generic RPM:**
+     ```bash
+     sudo rpm -i F-Chat.Horizon-linux-<arch>.rpm
+     ```
 
 ### Tarball (tar.gz)
 

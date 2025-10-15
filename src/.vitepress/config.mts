@@ -50,6 +50,7 @@ export default defineConfig({
     nav: [
       { text: "Home", link: "/" },
       { text: "Docs", link: "/docs/" },
+      { text: "FAQ", link: "/docs/faq"},
       { text: "Changelogs", items: getNavChangelogItems() },
     ],
     logo: "/assets/images/icon.png",
