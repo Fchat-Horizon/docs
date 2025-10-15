@@ -23,6 +23,19 @@ function getChangelogSidebarItems() {
     .reverse();
 }
 
+function getNavChangelogItems() {
+  const allItems = getChangelogSidebarItems();
+  const recentItems = allItems.slice(0, 7);
+
+  return [
+    ...recentItems,
+    {
+      text: "Older versions",
+      link: "/changelog",
+    },
+  ];
+}
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Horizon",
@@ -37,7 +50,7 @@ export default defineConfig({
     nav: [
       { text: "Home", link: "/" },
       { text: "Docs", link: "/docs/" },
-      { text: "Changelogs", items: getChangelogSidebarItems() },
+      { text: "Changelogs", items: getNavChangelogItems() },
     ],
     logo: "/assets/images/icon.png",
     sidebar: [
