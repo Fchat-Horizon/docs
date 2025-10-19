@@ -93,6 +93,10 @@ export default defineConfig({
           },
           { text: "Backing up your data", link: "/docs/guides/backup" },
           {
+            text: "Exporter & Importer",
+            link: "/docs/exporter-importer",
+          },
+          {
             text: "Custom name colors and avatars",
             link: "/docs/guides/colors-and-avatars",
           },

@@ -3,7 +3,25 @@
 > [!INFO]
 > These screenshots are all taken on Windows 11, but the process is the same on all platforms. It's just that the majority of our users are on Windows.
 
-## Where are my logs even?
+## Recommended: Using the Exporter
+
+Horizon includes a built-in exporter tool that makes backing up your data straightforward. This is the **recommended method** for most users as it handles everything automatically.
+
+### Quick Start
+
+1. Open the Horizon menu (hamburger icon), found in the top left next to the window title
+2. Go to `Horizon → Export Horizon Data`
+3. Select which data types and characters to include
+4. Click the export button
+5. Your backup is saved as `horizon-export-YYYY-MM-DDTHH-MM-SS.zip` in your Downloads folder
+
+For detailed information, see the [Exporter & Importer](../exporter-importer.md) guide.
+
+## Manual Backup (Alternative)
+
+If you prefer to manually manage your backup files instead of using the exporter, you can do so by directly copying your data folders.
+
+### Where are my logs even?
 
 If you've already read [this guide](./moving-from-rising) on how to import your logs from Rising, you'll know that the default location of the logs is somewhere in your user data or home folder. But this location is actually something you can configure yourself in the app's global settings, you can even easily view the exact folder here:
 
@@ -16,7 +34,10 @@ If you have separate drives or partitions on your computer, it's a good idea to 
 
 While the default location will have some files next to your character folders, like `eicons.json` or `settings`, you do not need to move these with your logs. They just happen to be saved in the same folder.
 
-## How do I back them up?
+### How do I manually back them up?
+
+> [!TIP]
+> The exporter/importer tool (described above) is a better solution for most users as it handles everything automatically. Use this method only if you have a reason to.
 
 Still logged into a character? Now is a good time to log off until you're done.
 
