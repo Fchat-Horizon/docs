@@ -9,8 +9,6 @@ outline: deep
 
 Horizon's goal is to offer more than just bugfixes over Rising and F-Chat 3.0, we also want to bring the experience of using F-Chat into the modern era, with more comforts and better integration into modern desktop use.
 
-Come from 3.0, or you don't even know what a "Rising" is? Take a look at [what else you're getting](rising).
-
 ## Settings menu
 
 Ever used Rising or the standalone 3.0, and noticed how all the settings are just thrown around the place?
