@@ -39,10 +39,9 @@ For backwards compatability with Rising users, ``Rising Portrait`` is also still
 For security reasons, only the following domains are currently whitelisted for support:
 
 - ``static.f-list.net``
-- ``iili.io``
-- ``e621.net``
-- ``i.imgur.com``
-- ``freeimage.host``
+- ``static.e621.net``
+- ``i.imgur.com`` (album links from imgur.com are not supported, only direct image links).
+- ``iili.io`` (album links from freeimage.host are not supported, only direct image links).
 - ``redgifs.com``
 - ``imgchest.com``
 - ``f2.toyhou.se``
