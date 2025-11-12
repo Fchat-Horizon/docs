@@ -13,8 +13,7 @@ Feel free to email me here!
 
 ## F-List
 
-Leave a note here!
-[The Horizon Dev](https://www.f-list.net/c/the%20horizon%20dev/)
+Leave a note for [Rose](https://www.f-list.net/c/the%20horizon%20dev/) or [FatCat](https://www.f-list.net/c/fatcat%20client/) here!
 
 ## Github
 
