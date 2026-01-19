@@ -38,9 +38,11 @@ For backwards compatability with Rising users, ``Rising Portrait`` is also still
 
 For security reasons, only the following domains are currently whitelisted for support:
 
+> [!WARNING]
+> As of January 18, 2026, Imgur is no longer supported for HQ PFPs. This decision was made based on a community vote after the UK govt decided to ban Imgur for not making citizens fork over their IDs to use the site.
+
 - ``static.f-list.net``
 - ``static.e621.net``
-- ``i.imgur.com`` (album links from imgur.com are not supported, only direct image links).
 - ``iili.io`` (album links from freeimage.host are not supported, only direct image links).
 - ``redgifs.com``
 - ``imgchest.com``
