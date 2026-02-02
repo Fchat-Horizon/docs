@@ -5,13 +5,37 @@ layout: home
 ---
 
 <script setup lang="ts">
-import downloadButt from './componets/downloadBtn.vue';
+import { computed, ref } from "vue";
+import downloadButt from "./componets/downloadBtn.vue";
 
-let ver: string | null = null;
+const ver = ref<string | null>(null);
+const platform = ref("unknown");
+const arch = ref("x64");
 
-if (typeof window !== 'undefined') {
+const isLinux = computed(() => platform.value === "linux");
+
+if (typeof window !== "undefined") {
   const urlParams = new URLSearchParams(window.location.search);
-  ver = urlParams.get('ver');
+  ver.value = urlParams.get("ver");
+
+  const userAgent = navigator.userAgent.toLowerCase();
+
+  if (userAgent.includes("win")) {
+    platform.value = "win";
+  } else if (userAgent.includes("mac")) {
+    platform.value = "mac";
+  } else if (userAgent.includes("linux")) {
+    platform.value = "linux";
+  }
+
+  if (platform.value === "mac") {
+    arch.value = "universal";
+  } else {
+    arch.value = platform.value === "linux" ? "x86_64" : "x64";
+    if (/(arm64|aarch64)/i.test(userAgent)) {
+      arch.value = "arm64";
+    }
+  }
 }
 </script>
 
@@ -19,9 +43,15 @@ if (typeof window !== 'undefined') {
   
 # Download
 
-Download {{ ver || 'the latest release ' }} of **Horizon**.
+Download {{ ver || "the latest release" }} of **Horizon**.
 
-<downloadButt :version="ver"/>
+<downloadButt :version="ver" :platform="platform" :arch="arch" />
+
+<p v-if="isLinux" class="alt-packages">
+  Using Linux? This download is the AppImage. For distro packages and other
+  install options, see the
+  <a href="docs/guides/install#linux">alternate package methods</a>.
+</p>
 
 Need help installing? Check out the [installation guide](docs/guides/install).
 
@@ -45,6 +75,11 @@ Looking for a specific version or platform? Check out our [GitHub releases](http
     color: #333;
 }
 
+.alt-packages {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
  
 .dark{ 
 .download-container {
@@ -60,6 +95,12 @@ Looking for a specific version or platform? Check out our [GitHub releases](http
 .download-container h1 {
     margin-bottom: 1rem;
     color: #ffffff;
+}
+
+.alt-packages {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #f4e9ef;
 }
 }
 </style>

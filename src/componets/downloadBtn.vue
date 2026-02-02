@@ -7,24 +7,40 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 
-import { ref, onMounted } from "vue";
+import { computed, ref, onMounted } from "vue";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
-const props = defineProps<{ manualOS?: string; version?: string }>();
+const props = defineProps<{
+  platform?: string;
+  arch?: string;
+  version?: string | null;
+}>();
 
-const osDetails = ref<{
-  name: string;
-  platform: string;
-  icon: IconDefinition;
-}>({
-  name: "Unknown OS",
-  platform: "unknown",
-  icon: faQuestionCircle,
+const osDetails = computed(() => {
+  switch (props.platform) {
+    case "win":
+      return { name: "Windows", platform: "win", icon: faWindows };
+    case "mac":
+      return { name: "Mac OS", platform: "mac", icon: faApple };
+    case "linux":
+      return { name: "Linux", platform: "linux", icon: faLinux };
+    default:
+      return {
+        name: "Unknown OS",
+        platform: "unknown",
+        icon: faQuestionCircle,
+      };
+  }
 });
-const downloadUrl = ref("");
-const downloadVersion = ref("");
+
+const downloadVersion = ref<string | undefined>(undefined);
 
 async function validateVersionParam() {
+  if (!props.version) {
+    downloadVersion.value = undefined;
+    return;
+  }
+
   try {
     const response = await fetch(
       "https://api.github.com/repos/Fchat-Horizon/Horizon/releases/tags/" +
@@ -39,52 +55,53 @@ async function validateVersionParam() {
 }
 
 onMounted(async () => {
-  //await fetchLatestRelease();
   await validateVersionParam();
+});
 
-  const userAgent = navigator.userAgent.toLowerCase();
-
-  if (userAgent.indexOf("win") !== -1) {
-    osDetails.value.name = "Windows";
-    osDetails.value.platform = "win";
-    osDetails.value.icon = faWindows; // Use the imported icon object
-  } else if (userAgent.indexOf("mac") !== -1) {
-    osDetails.value.name = "Mac OS";
-    osDetails.value.platform = "mac"; // Correct platform
-    osDetails.value.icon = faApple; // Use the imported icon object
-  } else if (userAgent.indexOf("linux") !== -1) {
-    osDetails.value.name = "Linux";
-    osDetails.value.platform = "linux";
-    osDetails.value.icon = faLinux; // Use the imported icon object
+const resolvedArch = computed(() => {
+  if (props.arch) {
+    return props.arch;
   }
 
-  let fileExtension = "";
+  if (osDetails.value.platform === "mac") {
+    return "universal";
+  }
+
+  if (osDetails.value.platform === "linux") {
+    return "x86_64";
+  }
+
+  return "x64";
+});
+
+const fileExtension = computed(() => {
   if (osDetails.value.platform === "win") {
-    fileExtension = "exe";
-  } else if (osDetails.value.platform === "mac") {
-    fileExtension = "dmg";
-  } else if (osDetails.value.platform === "linux") {
-    fileExtension = "AppImage";
-  } else {
-    // Fallback file extension
-    fileExtension = "exe";
+    return "exe";
   }
 
-  let arch = "x64";
-
-  if (osDetails.value.name === "Mac OS") {
-    arch = "universal";
-  } else {
-    arch = osDetails.value.platform === "linux" ? "x86_64" : "x64";
-    if (/(arm64|aarch64)/i.test(userAgent)) {
-      arch = "arm64";
-    }
+  if (osDetails.value.platform === "mac") {
+    return "dmg";
   }
 
-  //Yes, this is kind of ugly. But these two URLs have a different format.
-  downloadUrl.value = downloadVersion.value
-    ? `https://github.com/Fchat-Horizon/Horizon/releases/download/${props.version}/F-Chat.Horizon-${osDetails.value.platform}-${arch}.${fileExtension}`
-    : `https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-${osDetails.value.platform}-${arch}.${fileExtension}`;
+  if (osDetails.value.platform === "linux") {
+    return "AppImage";
+  }
+
+  return "exe";
+});
+
+const downloadUrl = computed(() =>
+  downloadVersion.value
+    ? `https://github.com/Fchat-Horizon/Horizon/releases/download/${props.version}/F-Chat.Horizon-${osDetails.value.platform}-${resolvedArch.value}.${fileExtension.value}`
+    : `https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-${osDetails.value.platform}-${resolvedArch.value}.${fileExtension.value}`,
+);
+
+const buttonLabel = computed(() => {
+  if (osDetails.value.platform === "linux") {
+    return "Download AppImage";
+  }
+
+  return `Download for ${osDetails.value.name}`;
 });
 </script>
 
@@ -92,18 +109,25 @@ onMounted(async () => {
   <a :href="downloadUrl" class="button-67">
     <button>
       <FontAwesomeIcon :icon="osDetails.icon" size="lg"></FontAwesomeIcon>
-      Download for
-      {{ osDetails.name }}
+      {{ buttonLabel }}
     </button>
   </a>
 </template>
 
 <style lang="scss" scoped>
 /* From Uiverse.io by Kabak */
+.button-67 {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
 button {
-  height: 50px;
+  height: auto;
   margin: 5px;
-  width: 300px;
+  width: fit-content;
+  max-width: 92vw;
+  padding: 14px 22px;
   background: #333;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -112,12 +136,15 @@ button {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  display: flex;
+  gap: 10px;
   font-family:
     Consolas,
     Courier New,
     monospace;
   border: solid #404c5d 1px;
-  font-size: 18px;
+  font-size: 20px;
+  line-height: 1.2;
   color: rgb(161, 161, 161);
   -webkit-transition: 500ms;
   transition: 500ms;
