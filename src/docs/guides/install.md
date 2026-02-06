@@ -57,7 +57,7 @@ Feel like an option tailored to your distro of choice is missing? Don't be shy a
    sudo apt install ./F-Chat.Horizon-linux-<arch>.deb
    ```
 
-#### Fedora/RPM-based (rpm)
+### Fedora/RPM-based (rpm)
 
 1. Download the `.rpm` file for your architecture:
    - [Linux x64 .rpm](https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-linux-x86_64.rpm)
