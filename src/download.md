@@ -5,7 +5,7 @@ layout: home
 ---
 
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, ref, onMounted } from "vue";
 import downloadButt from "./componets/downloadBtn.vue";
 
 const ver = ref<string | null>(null);
@@ -14,7 +14,7 @@ const arch = ref("x64");
 
 const isLinux = computed(() => platform.value === "linux");
 
-if (typeof window !== "undefined") {
+onMounted(() => {
   const urlParams = new URLSearchParams(window.location.search);
   ver.value = urlParams.get("ver");
 
@@ -36,7 +36,7 @@ if (typeof window !== "undefined") {
       arch.value = "arm64";
     }
   }
-}
+});
 </script>
 
 <div class="download-container">
