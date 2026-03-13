@@ -34,28 +34,27 @@ const osDetails = computed(() => {
 });
 
 const downloadVersion = ref<string | undefined>(undefined);
+const releaseAssets = ref<Array<{ name: string; browser_download_url: string }>>([]);
 
-async function validateVersionParam() {
-  if (!props.version) {
-    downloadVersion.value = undefined;
-    return;
-  }
+async function resolveRelease() {
+  const url = props.version
+    ? `https://api.github.com/repos/Fchat-Horizon/Horizon/releases/tags/${props.version}`
+    : `https://api.github.com/repos/Fchat-Horizon/Horizon/releases/latest`;
 
   try {
-    const response = await fetch(
-      "https://api.github.com/repos/Fchat-Horizon/Horizon/releases/tags/" +
-        props.version,
-    );
+    const response = await fetch(url);
     const data = await response.json();
     downloadVersion.value = data.tag_name;
+    releaseAssets.value = data.assets ?? [];
   } catch (error) {
-    console.error("Error fetching the specified release:", error);
+    console.error("Error fetching release:", error);
     downloadVersion.value = undefined;
+    releaseAssets.value = [];
   }
 }
 
 onMounted(async () => {
-  await validateVersionParam();
+  await resolveRelease();
 });
 
 const resolvedArch = computed(() => {
@@ -90,11 +89,24 @@ const fileExtension = computed(() => {
   return "exe";
 });
 
-const downloadUrl = computed(() =>
-  downloadVersion.value
-    ? `https://github.com/Fchat-Horizon/Horizon/releases/download/${props.version}/F-Chat.Horizon-${osDetails.value.platform}-${resolvedArch.value}.${fileExtension.value}`
-    : `https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-${osDetails.value.platform}-${resolvedArch.value}.${fileExtension.value}`,
+const fileVersion = computed(() =>
+  downloadVersion.value?.replace(/^v/, ""),
 );
+
+const downloadUrl = computed(() => {
+  if (!downloadVersion.value || !fileVersion.value) {
+    return "";
+  }
+  const suffix = `-${osDetails.value.platform}-${resolvedArch.value}.${fileExtension.value}`;
+  if (releaseAssets.value.length > 0) {
+    const asset = releaseAssets.value.find((a) => a.name.endsWith(suffix));
+    if (asset) {
+      return asset.browser_download_url;
+    }
+  }
+  const file = `F-Chat.Horizon-${fileVersion.value}${suffix}`;
+  return `https://github.com/Fchat-Horizon/Horizon/releases/download/${downloadVersion.value}/${file}`;
+});
 
 const buttonLabel = computed(() => {
   if (osDetails.value.platform === "linux") {
