@@ -8,16 +8,14 @@ layout: home
 import { computed, ref, onMounted } from "vue";
 import downloadButt from "./componets/downloadBtn.vue";
 
-const ver = ref<string | null>(null);
+const urlParams = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
+const ver = ref<string | null>(urlParams?.get("ver") ?? null);
 const platform = ref("unknown");
 const arch = ref("x64");
 
 const isLinux = computed(() => platform.value === "linux");
 
 onMounted(() => {
-  const urlParams = new URLSearchParams(window.location.search);
-  ver.value = urlParams.get("ver");
-
   const userAgent = navigator.userAgent.toLowerCase();
 
   if (userAgent.includes("win")) {

@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 
-import { computed, ref, onMounted } from "vue";
+import { computed, ref, watch, onMounted } from "vue";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 const props = defineProps<{
@@ -54,6 +54,10 @@ async function resolveRelease() {
 }
 
 onMounted(async () => {
+  await resolveRelease();
+});
+
+watch(() => props.version, async () => {
   await resolveRelease();
 });
 
