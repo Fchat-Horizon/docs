@@ -4,7 +4,7 @@ outline: 3
 
 # Rising Features
 
-Horizon is a continuation of the, now defunct, F-Chat Rising— which itself is a customized fork of the standalone 3.0 client. Because of that, all of the cool features (except that one not-so-cool one) are all part of Horizon too! 
+Horizon is a continuation of the, now defunct, F-Chat Rising— which itself is a customized fork of the standalone 3.0 client. Because of that, all of the cool features (except that one not-so-cool one) are all part of Horizon too!
 
 We've retooled some of those as well:
 
@@ -26,7 +26,6 @@ For the future, we also have plans to adjust the matcher to user feedback, thoug
 
 - You can now post ads with custom intervals.
 - Rising was set to phase out the per-channel ad settings, but never got around to it. Our plan is to work these two functions together into one.
-
 
 ## EIcon selector and color picker
 

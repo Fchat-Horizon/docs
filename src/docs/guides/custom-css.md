@@ -137,7 +137,7 @@ As for the actual rules we will apply, we use the following:
 
 ```css
 #page {
-  font-family: "Comic Sans MS";
+  font-family: 'Comic Sans MS';
 }
 
 #user-list .gender-female {
@@ -168,7 +168,7 @@ And voila!:
 
 ![Our results have been applied to the bbcode](images/custom-css/result-bbcode.png)
 
-Maybe it won't look great, but it will be *yours* and catered to your specific needs and wants.
+Maybe it won't look great, but it will be _yours_ and catered to your specific needs and wants.
 
 ### Further reading
 

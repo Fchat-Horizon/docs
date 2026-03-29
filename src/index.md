@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  text: "Look to the <span class=\"pretty-name\">Horizon</span>"
-  tagline: "Horizon is the <a href=\"/docs/quality-of-life.html\"><span class=\"love\">best</span></a> F-Chat client. No exceptions."
+  text: 'Look to the <span class="pretty-name">Horizon</span>'
+  tagline: 'Horizon is the <a href="/docs/quality-of-life.html"><span class="love">best</span></a> F-Chat client. No exceptions.'
   image:
     src: /assets/images/icon.ico
     alt: Logo
@@ -24,8 +24,8 @@ hero:
 
 features:
   - icon:
-      src: "/assets/images/quick-jump.png"
-      alt: "Extra features"
+      src: '/assets/images/quick-jump.png'
+      alt: 'Extra features'
       height: 100%
       width: 100%
     title: Extra features
@@ -33,8 +33,8 @@ features:
     link: /docs/features-overview
     linkText: Read more
   - icon:
-      src: "/assets/images/qol.png"
-      alt: "Quality of life changes"
+      src: '/assets/images/qol.png'
+      alt: 'Quality of life changes'
       height: 100%
       width: 100%
     title: Quality of life changes
@@ -42,15 +42,15 @@ features:
     link: /docs/quality-of-life
     linkText: Read more
   - icon:
-      src: "/assets/images/memory-usage.png"
-      alt: "Memory ussage"
+      src: '/assets/images/memory-usage.png'
+      alt: 'Memory ussage'
       width: 100%
       height: 100%
     title: Performant and polished
     details: Increased performance, and with many fixed bugs compared to Rising.
   - icon:
-      src: "/assets/images/community.png"
-      alt: "Community-driven"
+      src: '/assets/images/community.png'
+      alt: 'Community-driven'
       width: 100%
       height: 100%
     title: Community-driven
@@ -58,22 +58,19 @@ features:
     link: /contact
     linkText: Get in touch
   - icon:
-      src: "/assets/images/theme.png"
-      alt: "A fresh coat of paint"
+      src: '/assets/images/theme.png'
+      alt: 'A fresh coat of paint'
       width: 100%
       height: 100%
     title: A fresh coat of paint
-    details: As of version 1.33.0, we've redone a lot of the visual elements to look nice and consistent with each other. 
-  - icon: 
-      src: "/assets/images/theming.png"
-      alt: "Brand new themes"
+    details: As of version 1.33.0, we've redone a lot of the visual elements to look nice and consistent with each other.
+  - icon:
+      src: '/assets/images/theming.png'
+      alt: 'Brand new themes'
       width: 100%
       height: 100%
     title: In the colors you like!
     details: Brand new themes, and constantly adding more. You'll never get bored of how the client looks, guaranteed
-
-  
-
 ---
 
 <style lang="scss">

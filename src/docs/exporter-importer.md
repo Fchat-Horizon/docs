@@ -6,6 +6,7 @@ outline: deep
 # Exporter & Importer
 
 Horizon includes a built-in exporter/importer for backing up and restoring your client data. It allows you to easily back up and restore the following:
+
 - General settings (global app config)
 - Character settings (per-character config)
 - Chat logs
@@ -16,6 +17,7 @@ Horizon includes a built-in exporter/importer for backing up and restoring your 
 - Hidden users
 
 You can choose which characters and which data types to include. The exported ZIP uses a folder structure like the following:
+
 ```
 settings
 characters/<character>/settings/[...]
@@ -45,6 +47,7 @@ characters/<character>/drafts.txt
 ## Importing
 
 ### Importing from an export
+
 1. Open the hamburger menu, go to `Horizon → Export Horizon Data`
 2. Scroll to the bottom section titled "Import from export"
 3. Click "Select Export" to choose your `horizon-export-YYYY-MM-DDTHH-MM-SS.zip` file
@@ -54,6 +57,7 @@ characters/<character>/drafts.txt
 7. Click "Restore export" to complete the import
 
 ### Importing from the original client
+
 Horizon will automatically prompt you to import your data when you first launch it, if it detects compatible Vanilla client data. However, to do it manually:
 
 1. Open the hamburger menu, go to `Horizon → Export Horizon Data`
@@ -99,5 +103,3 @@ Horizon will automatically prompt you to import your data when you first launch 
 
 > [!NOTE]
 > This feature is new and may receive further improvements. Feedback and bug reports are welcome!
-
-

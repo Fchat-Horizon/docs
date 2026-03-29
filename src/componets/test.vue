@@ -1,3 +1,3 @@
 <script>
-import downloadBtn from './downloadBtn.vue';
+  import downloadBtn from './downloadBtn.vue';
 </script>

@@ -3,11 +3,13 @@ outline: 2-3
 ---
 
 # Contributing to Horizon
+
 Before we begin, I'd like to thank you for taking interest in contributing! Horizon is a small-time side hobby, so any help is greatly appreciated.
 
-That being said, *Horizon is an opinionated fork*, and as such we enforce strong code quality standards. You can read more about this on this page.
+That being said, _Horizon is an opinionated fork_, and as such we enforce strong code quality standards. You can read more about this on this page.
 
 ## Table of Contents <!-- omit in toc -->
+
 - [Contributing to Horizon](#contributing-to-horizon)
   - [Where do I start?!](#where-do-i-start)
     - [Technology](#technology)
@@ -25,7 +27,7 @@ You wish to add a new feature to Horizon, or fix that one bug that's been pissin
 
 ### Technology
 
-Horizon is written primarily in *Vue*, *Typescript*, and *Javascript.* You'll need **[Node.js](https://nodejs.org/en/download)**, **[PNPM](https://pnpm.io/installation)**, and **[NVM](https://github.com/nvm-sh/nvm)** (or a similar node version manager, such as fnm). You might also want to consider using VScode to integrate with prettier.
+Horizon is written primarily in _Vue_, _Typescript_, and _Javascript._ You'll need **[Node.js](https://nodejs.org/en/download)**, **[PNPM](https://pnpm.io/installation)**, and **[NVM](https://github.com/nvm-sh/nvm)** (or a similar node version manager, such as fnm). You might also want to consider using VScode to integrate with prettier.
 
 You should use Node.js **v22.13.0**.
 
@@ -35,7 +37,7 @@ In short, you can run the following commands:
 
 ```sh
 git clone https://github.com/Fchat-Horizon/Horizon.git
-cd Horizon 
+cd Horizon
 pnpm install
 ```
 
@@ -46,6 +48,7 @@ pnpm install
 Run the following commands,
 
 **For development:**
+
 ```
 cd electron
 pnpm build
@@ -53,6 +56,7 @@ pnpm start
 ```
 
 **For distribution:**
+
 ```
 cd electron
 pnpm build:dist
@@ -61,7 +65,7 @@ node pack.js
 
 #### Mobile
 
-Mobile builds are currently unsupported, but if you're up to the challange, *maybe you can fix it?*
+Mobile builds are currently unsupported, but if you're up to the challange, _maybe you can fix it?_
 
 Look at the `mobile` directory for more info. For `android`, we recommend you use android studio to make your life more pleasent.
 
@@ -87,10 +91,11 @@ Look at the `mobile` directory for more info. For `android`, we recommend you us
 #### Tags
 
 We follow a [semantic versioning](https://semver.org) format:
+
 - **vX.Y.Z**  
   Represents a production-ready release. For example: `v1.0.0`
 - **vX.Y.Z-DEV-X.Y**  
-  Early, often unstable releases. Also known as *Canary* in **Rising**.
+  Early, often unstable releases. Also known as _Canary_ in **Rising**.
 - **vX.Y.Z-BETA-X.Y**  
   A pre-release version that's intended for testing before the final release.
 - **vX.Y.Z-rc-X.Y**  

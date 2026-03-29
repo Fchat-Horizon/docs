@@ -1,19 +1,19 @@
-import { defineConfig } from "vitepress";
-import fs from "fs";
-import path from "path";
+import { defineConfig } from 'vitepress';
+import fs from 'fs';
+import path from 'path';
 
 function getChangelogSidebarItems() {
-  const changelogDir = path.resolve(__dirname, "../docs/changelogs");
+  const changelogDir = path.resolve(__dirname, '../docs/changelogs');
   if (!fs.existsSync(changelogDir)) return [];
 
   return fs
     .readdirSync(changelogDir)
-    .filter((file) => file.endsWith(".md"))
+    .filter((file) => file.endsWith('.md'))
     .map((file) => {
-      const name = file.replace(/\.md$/, "");
+      const name = file.replace(/\.md$/, '');
       // Optionally, make the text more readable:
       const text = name
-        .replace(/-/g, " ")
+        .replace(/-/g, ' ')
         .replace(/\b\w/g, (l) => l.toUpperCase());
       return {
         text,
@@ -30,96 +30,96 @@ function getNavChangelogItems() {
   return [
     ...recentItems,
     {
-      text: "Older versions",
-      link: "/changelog",
+      text: 'Older versions',
+      link: '/changelog',
     },
   ];
 }
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Horizon",
-  description: "Horizon Docs",
+  title: 'Horizon',
+  description: 'Horizon Docs',
   lastUpdated: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     editLink: {
-      pattern: "https://github.com/Fchat-Horizon/docs/edit/main/src/:path",
-      text: "Edit on GitHub",
+      pattern: 'https://github.com/Fchat-Horizon/docs/edit/main/src/:path',
+      text: 'Edit on GitHub',
     },
     nav: [
-      { text: "Home", link: "/" },
-      { text: "Docs", link: "/docs/" },
-      { text: "FAQ", link: "/docs/faq"},
-      { text: "Changelogs", items: getNavChangelogItems() },
+      { text: 'Home', link: '/' },
+      { text: 'Docs', link: '/docs/' },
+      { text: 'FAQ', link: '/docs/faq' },
+      { text: 'Changelogs', items: getNavChangelogItems() },
     ],
-    logo: "/assets/images/icon.png",
+    logo: '/assets/images/icon.png',
     sidebar: [
       {
-        text: "Introduction",
+        text: 'Introduction',
         items: [
-          { text: "Docs Home", link: "/docs/" },
-          { text: "Frequently Asked Questions", link: "/docs/faq" },
-          { text: "Installing Horizon", link: "/docs/guides/install" },
+          { text: 'Docs Home', link: '/docs/' },
+          { text: 'Frequently Asked Questions', link: '/docs/faq' },
+          { text: 'Installing Horizon', link: '/docs/guides/install' },
           {
-            text: "Changelogs",
-            link: "/changelog",
+            text: 'Changelogs',
+            link: '/changelog',
             collapsed: true,
             items: getChangelogSidebarItems(),
           },
-          { text: "Contact", link: "/contact" },
+          { text: 'Contact', link: '/contact' },
         ],
       },
       {
-        text: "Features",
+        text: 'Features',
         items: [
-          { text: "Overview", link: "/docs/features-overview" },
+          { text: 'Overview', link: '/docs/features-overview' },
           {
-            text: "Quality of life changes",
-            link: "/docs/quality-of-life",
+            text: 'Quality of life changes',
+            link: '/docs/quality-of-life',
           },
           {
-            text: "Rising Features",
-            link: "/docs/rising",
+            text: 'Rising Features',
+            link: '/docs/rising',
           },
         ],
       },
       {
-        text: "Wiki",
+        text: 'Wiki',
         items: [
           {
-            text: "Moving logs from Rising",
-            link: "/docs/guides/moving-from-rising",
+            text: 'Moving logs from Rising',
+            link: '/docs/guides/moving-from-rising',
           },
-          { text: "Backing up your data", link: "/docs/guides/backup" },
+          { text: 'Backing up your data', link: '/docs/guides/backup' },
           {
-            text: "Exporter & Importer",
-            link: "/docs/exporter-importer",
+            text: 'Exporter & Importer',
+            link: '/docs/exporter-importer',
           },
           {
-            text: "Custom name colors and avatars",
-            link: "/docs/guides/colors-and-avatars",
+            text: 'Custom name colors and avatars',
+            link: '/docs/guides/colors-and-avatars',
           },
-          { text: "Creating sound themes", link: "/docs/guides/sound-themes" },
-          { text: "Custom user styles", link: "/docs/guides/custom-css" },
+          { text: 'Creating sound themes', link: '/docs/guides/sound-themes' },
+          { text: 'Custom user styles', link: '/docs/guides/custom-css' },
         ],
       },
       {
-        text: "Development",
-        items: [{ text: "Contributing", link: "/docs/contributing" }],
+        text: 'Development',
+        items: [{ text: 'Contributing', link: '/docs/contributing' }],
       },
     ],
     lastUpdated: {
       formatOptions: {
-        dateStyle: "long",
-        timeStyle: "short",
+        dateStyle: 'long',
+        timeStyle: 'short',
       },
     },
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/Fchat-Horizon/Horizon" },
-      { icon: "discord", link: "https://discord.gg/JYuxqNVNtP" },
+      { icon: 'github', link: 'https://github.com/Fchat-Horizon/Horizon' },
+      { icon: 'discord', link: 'https://discord.gg/JYuxqNVNtP' },
     ],
   },
-  head: [["link", { rel: "icon", href: "/assets/images/icon.ico" }]],
+  head: [['link', { rel: 'icon', href: '/assets/images/icon.ico' }]],
 });

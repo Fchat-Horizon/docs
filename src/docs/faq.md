@@ -18,6 +18,7 @@ For a slightly less obtuse answer, we do have [a list](https://github.com/Fchat-
 ## What advantage/thing do I get as opposed to F-chat 3.0?
 
 The full list of additional features and quality of life changes is probably way too big for a short FAQ item like this, but here are some of our favourite additions to Horizon:
+
 - Friendlier resource usage
 - Automatically saving your message drafts in case of disconnects or crashes. Which also means you can write a post for someone who’s offline and send it when they come back online!
 - High quality or animated profile pics.
@@ -33,7 +34,7 @@ Also because you’d still be getting new features and fixes since the creator o
 
 I mean, I know it would convince me…
 
-Also something about using around 400mb of RAM less per character tab and a bunch of other [new features](features-overview). And I *guess* we might have fixed a ton of other bugs too.
+Also something about using around 400mb of RAM less per character tab and a bunch of other [new features](features-overview). And I _guess_ we might have fixed a ton of other bugs too.
 
 ## How do I use it? Which platforms are supported?
 
@@ -49,7 +50,7 @@ We’re working on a built-in tool that will automatically do this for you, expe
 
 ## I’m using 3.0 in my web browser. Can I keep my logs and settings?
 
-*~~Sadly no, we can’t import these because they’re stored with your browser’s cache data. You can still export them to both HTML or text files and read them after, but because of all the differences between individual web browsers and platforms, making a one-size-fits-all solution for importing these is sadly unfeasible for us.~~*
+_~~Sadly no, we can’t import these because they’re stored with your browser’s cache data. You can still export them to both HTML or text files and read them after, but because of all the differences between individual web browsers and platforms, making a one-size-fits-all solution for importing these is sadly unfeasible for us.~~_
 
 Yes! Soon-ish. We're working on a browser userscript that would allow you to export your logs from the web version for use in the desktop version of 3.0— and by extension Horizon. You'll find it here, and maybe in a few other places too once it's done.
 
@@ -77,6 +78,3 @@ If you require direct help while trying to work on something, our Discord is the
 ## How much RAM is required to run Horizon?
 
 Around 1 GB if you’re using 3 characters at a time, but depending on your OS performance may vary. This number is something we’re working on and will get shaved down in the (hopefully nearby) future.
-
-
-

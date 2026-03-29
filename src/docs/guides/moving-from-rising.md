@@ -41,4 +41,4 @@ Horizon uses the same kind of folder structure, so if you have already started t
 ![alt text](images/moving-from-rising/horizon-data.png)
 
 > [!WARNING]
-> Please don't copy over files like ``eicons.json``, ``window.json`` or ``settings``. The formats they're in might not be compatible with current versions of Horizon and could break things.
+> Please don't copy over files like `eicons.json`, `window.json` or `settings`. The formats they're in might not be compatible with current versions of Horizon and could break things.

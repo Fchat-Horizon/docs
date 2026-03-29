@@ -13,9 +13,9 @@ Horizon's goal is to offer more than just bugfixes over Rising and F-Chat 3.0, w
 
 Ever used Rising or the standalone 3.0, and noticed how all the settings are just thrown around the place?
 
-![Settings menu, showing off the "Look and feel" section](images/settings-look-and-feel.png) 
+![Settings menu, showing off the "Look and feel" section](images/settings-look-and-feel.png)
 
-*Bam!* Settings menu.
+_Bam!_ Settings menu.
 
 As of writing, all of the settings in the character-specific settings screen (the one you'll see underneath the place you set your status once you're signed in) haven't been moved to this screen; we want to ease people in first. All of our fellow altaholics can rest assured, the annoying ones you'd normally get sick of having to change for all your characters (like the font size, or the notification sounds) are going to be _global_ settings soon. That way they'll be the same across the board.
 
@@ -64,6 +64,6 @@ Some other stuff we like, and we hope you'll too:
 
 ## And so much more planned...
 
-We're still actively developing Horizon, and we have a *lot* of ideas planned still.
+We're still actively developing Horizon, and we have a _lot_ of ideas planned still.
 
 Our goal is to make it not just the better 3.0 client, but the best one imaginable.
