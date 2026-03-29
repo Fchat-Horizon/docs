@@ -4,7 +4,7 @@ outline: deep
 
 # Installing Horizon
 
-The installer for your platform of choice can be downloaded from either the [download](../../download) page, or from the [GitHub repository's releases page](https://github.com/Fchat-Horizon/Horizon/releases/tag/v1.32.0). On the latter, you can also download older versions or ones for a different platform.
+The installer for your platform of choice can be downloaded from the [download](../../download) page, where you'll find packages for every platform and architecture. Older versions are available on the [GitHub releases page](https://github.com/Fchat-Horizon/Horizon/releases).
 
 Hopping over from Rising? Check out [this guide](moving-from-rising) on migrating your data.
 
@@ -31,9 +31,7 @@ Feel like an option tailored to your distro of choice is missing? Don't be shy a
 
 ### AppImage
 
-1. Download the AppImage for your architecture:
-   - [Linux x64 .AppImage](https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-linux-x86_64.AppImage)
-   - [Linux arm64 .AppImage](https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-linux-arm64.AppImage)
+1. Download the AppImage for your architecture from the [download page](../../download?platform=linux) (look under **Linux → .AppImage**).
 2. Make it executable, then run:
    ```bash
    chmod +x F-Chat.Horizon-linux-<arch>.AppImage
@@ -42,9 +40,7 @@ Feel like an option tailored to your distro of choice is missing? Don't be shy a
 
 ### Debian/Ubuntu (deb)
 
-1. Download the `.deb` file for your architecture.
-   - [Linux x64 .deb](https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-linux-amd64.deb)
-   - [Linux arm64 .deb](https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-linux-arm64.deb)
+1. Download the `.deb` file for your architecture from the [download page](../../download?platform=linux) (look under **Linux → .deb**).
 2. Install:
 
    ```bash
@@ -59,9 +55,7 @@ Feel like an option tailored to your distro of choice is missing? Don't be shy a
 
 ### Fedora/RPM-based (rpm)
 
-1. Download the `.rpm` file for your architecture:
-   - [Linux x64 .rpm](https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-linux-x86_64.rpm)
-   - [Linux arm64 .rpm](https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-linux-arm64.rpm)
+1. Download the `.rpm` file for your architecture from the [download page](../../download?platform=linux) (look under **Linux → .rpm**).
 2. Install using your package manager:
    - **Fedora/RHEL/CentOS:**
      ```bash
@@ -78,9 +72,7 @@ Feel like an option tailored to your distro of choice is missing? Don't be shy a
 
 ### Tarball (tar.gz)
 
-1. Download the `.tar.gz` for your architecture:
-   - [Linux x64 .tar.gz](https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-linux-x64.tar.gz)
-   - [Linux arm64 .tar.gz](https://github.com/Fchat-Horizon/Horizon/releases/latest/download/F-Chat.Horizon-linux-arm64.tar.gz)
+1. Download the `.tar.gz` for your architecture from the [download page](../../download?platform=linux) (look under **Linux → .tar.gz**).
 2. Extract and run:
    ```bash
    tar -xzf F-Chat.Horizon-linux-<arch>.tar.gz

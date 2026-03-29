@@ -1,220 +1,179 @@
 <script setup lang="ts">
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import {
-  faWindows,
-  faApple,
-  faLinux,
-} from "@fortawesome/free-brands-svg-icons";
-import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
+  import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+  import {
+    faWindows,
+    faApple,
+    faLinux,
+  } from '@fortawesome/free-brands-svg-icons';
+  import {
+    faQuestionCircle,
+    faDownload,
+  } from '@fortawesome/free-solid-svg-icons';
 
-import { computed, ref, watch, onMounted } from "vue";
-import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+  import { computed, toRef } from 'vue';
+  import { useGithubRelease } from '../composables/useGithubRelease';
 
-const props = defineProps<{
-  platform?: string;
-  arch?: string;
-  version?: string | null;
-}>();
+  const props = defineProps<{
+    platform?: string;
+    arch?: string;
+    version?: string | null;
+  }>();
 
-const osDetails = computed(() => {
-  switch (props.platform) {
-    case "win":
-      return { name: "Windows", platform: "win", icon: faWindows };
-    case "mac":
-      return { name: "Mac OS", platform: "mac", icon: faApple };
-    case "linux":
-      return { name: "Linux", platform: "linux", icon: faLinux };
-    default:
-      return {
-        name: "Unknown OS",
-        platform: "unknown",
-        icon: faQuestionCircle,
-      };
-  }
-});
+  const { downloadVersion, assetUrl } = useGithubRelease(
+    toRef(props, 'version'),
+  );
 
-const downloadVersion = ref<string | undefined>(undefined);
-const releaseAssets = ref<Array<{ name: string; browser_download_url: string }>>([]);
-
-async function resolveRelease() {
-  const url = props.version
-    ? `https://api.github.com/repos/Fchat-Horizon/Horizon/releases/tags/${props.version}`
-    : `https://api.github.com/repos/Fchat-Horizon/Horizon/releases/latest`;
-
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-    downloadVersion.value = data.tag_name;
-    releaseAssets.value = data.assets ?? [];
-  } catch (error) {
-    console.error("Error fetching release:", error);
-    downloadVersion.value = undefined;
-    releaseAssets.value = [];
-  }
-}
-
-onMounted(async () => {
-  await resolveRelease();
-});
-
-watch(() => props.version, async () => {
-  await resolveRelease();
-});
-
-const resolvedArch = computed(() => {
-  if (props.arch) {
-    return props.arch;
-  }
-
-  if (osDetails.value.platform === "mac") {
-    return "universal";
-  }
-
-  if (osDetails.value.platform === "linux") {
-    return "x86_64";
-  }
-
-  return "x64";
-});
-
-const fileExtension = computed(() => {
-  if (osDetails.value.platform === "win") {
-    return "exe";
-  }
-
-  if (osDetails.value.platform === "mac") {
-    return "dmg";
-  }
-
-  if (osDetails.value.platform === "linux") {
-    return "AppImage";
-  }
-
-  return "exe";
-});
-
-const fileVersion = computed(() =>
-  downloadVersion.value?.replace(/^v/, ""),
-);
-
-const downloadUrl = computed(() => {
-  if (!downloadVersion.value || !fileVersion.value) {
-    return "";
-  }
-  const suffix = `-${osDetails.value.platform}-${resolvedArch.value}.${fileExtension.value}`;
-  if (releaseAssets.value.length > 0) {
-    const asset = releaseAssets.value.find((a) => a.name.endsWith(suffix));
-    if (asset) {
-      return asset.browser_download_url;
+  const osDetails = computed(() => {
+    switch (props.platform) {
+      case 'win':
+        return { name: 'Windows', platform: 'win', icon: faWindows };
+      case 'mac':
+        return { name: 'Mac OS', platform: 'mac', icon: faApple };
+      case 'linux':
+        return { name: 'Linux', platform: 'linux', icon: faLinux };
+      default:
+        return {
+          name: 'Unknown OS',
+          platform: 'unknown',
+          icon: faQuestionCircle,
+        };
     }
-  }
-  const file = `F-Chat.Horizon-${fileVersion.value}${suffix}`;
-  return `https://github.com/Fchat-Horizon/Horizon/releases/download/${downloadVersion.value}/${file}`;
-});
+  });
 
-const buttonLabel = computed(() => {
-  if (osDetails.value.platform === "linux") {
-    return "Download AppImage";
-  }
+  const resolvedArch = computed(() => {
+    if (props.arch) return props.arch;
+    if (osDetails.value.platform === 'mac') return 'universal';
+    if (osDetails.value.platform === 'linux') return 'x86_64';
+    return 'x64';
+  });
 
-  return `Download for ${osDetails.value.name}`;
-});
+  const fileExtension = computed(() => {
+    if (osDetails.value.platform === 'win') return 'exe';
+    if (osDetails.value.platform === 'mac') return 'dmg';
+    if (osDetails.value.platform === 'linux') return 'AppImage';
+    return 'exe';
+  });
+
+  const downloadUrl = computed(() => {
+    if (!downloadVersion.value) return '';
+    const suffix = `-${osDetails.value.platform}-${resolvedArch.value}.${fileExtension.value}`;
+    return assetUrl(suffix);
+  });
+
+  const buttonLabel = computed(() => {
+    if (osDetails.value.platform === 'linux') return 'Download AppImage';
+    return `Download for ${osDetails.value.name}`;
+  });
 </script>
 
 <template>
-  <a :href="downloadUrl" class="button-67">
-    <button>
-      <FontAwesomeIcon :icon="osDetails.icon" size="lg"></FontAwesomeIcon>
-      {{ buttonLabel }}
-    </button>
+  <a
+    v-if="downloadVersion"
+    :href="downloadUrl"
+    class="vp-download-btn"
+  >
+    <FontAwesomeIcon
+      :icon="osDetails.icon"
+      class="btn-os-icon"
+    />
+    <span class="btn-body">
+      <span class="btn-label">{{ buttonLabel }}</span>
+      <span class="btn-version">{{ downloadVersion }}</span>
+    </span>
+    <FontAwesomeIcon
+      :icon="faDownload"
+      class="btn-dl-icon"
+    />
   </a>
+  <span
+    v-else
+    class="vp-download-btn vp-download-btn--loading"
+  >
+    <FontAwesomeIcon
+      :icon="osDetails.icon"
+      class="btn-os-icon"
+    />
+    <span class="btn-label">Loading&hellip;</span>
+  </span>
 </template>
 
 <style lang="scss" scoped>
-/* From Uiverse.io by Kabak */
-.button-67 {
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-}
+  .vp-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 2rem;
+    background-color: var(--vp-button-brand-bg);
+    color: var(--vp-button-brand-text) !important;
+    border: 1px solid var(--vp-button-brand-border);
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition:
+      background-color 0.2s,
+      border-color 0.2s,
+      box-shadow 0.2s,
+      transform 0.15s;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(111, 75, 176, 0.28);
 
-button {
-  height: auto;
-  margin: 5px;
-  width: fit-content;
-  max-width: 92vw;
-  padding: 14px 22px;
-  background: #333;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: flex;
-  gap: 10px;
-  font-family:
-    Consolas,
-    Courier New,
-    monospace;
-  border: solid #404c5d 1px;
-  font-size: 20px;
-  line-height: 1.2;
-  color: rgb(161, 161, 161);
-  -webkit-transition: 500ms;
-  transition: 500ms;
-  border-radius: 5px;
-  background: linear-gradient(145deg, #2e2d2d, #212121);
-  -webkit-box-shadow:
-    -1px -5px 15px #41465b,
-    5px 5px 15px #41465b,
-    inset 5px 5px 10px #212121,
-    inset -5px -5px 10px #212121;
-  box-shadow:
-    -1px -5px 15px #41465b,
-    5px 5px 15px #41465b,
-    inset 5px 5px 10px #212121,
-    inset -5px -5px 10px #212121;
-}
+    &:hover {
+      background-color: var(--vp-button-brand-hover-bg);
+      border-color: var(--vp-button-brand-hover-border);
+      color: var(--vp-button-brand-hover-text) !important;
+      box-shadow: 0 6px 24px rgba(111, 75, 176, 0.48);
+      transform: translateY(-2px);
+    }
 
-.dark {
-  button {
-    background: linear-gradient(145deg, #1c191c, #212121);
-    -webkit-box-shadow:
-      -1px -5px 15px #61364b,
-      5px 5px 15px #61364b,
-      inset 5px 5px 10px #292329,
-      inset -5px -5px 10px #292329;
-    box-shadow:
-      -1px -5px 15px #61364b,
-      5px 5px 15px #61364b,
-      inset 5px 5px 10px #292329,
-      inset -5px -5px 10px #292329;
+    &:active {
+      background-color: var(--vp-button-brand-active-bg);
+      border-color: var(--vp-button-brand-active-border);
+      color: var(--vp-button-brand-active-text) !important;
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(111, 75, 176, 0.2);
+    }
+
+    &--loading {
+      opacity: 0.5;
+      pointer-events: none;
+    }
   }
-}
 
-button:hover {
-  -webkit-box-shadow:
-    1px 1px 13px #61364b,
-    -1px -1px 13px #907281;
-  box-shadow:
-    1px 1px 13px #61364b,
-    -1px -1px 13px #907281;
-  color: #d6d6d6;
-  -webkit-transition: 500ms;
-  transition: 500ms;
-}
+  .btn-os-icon {
+    font-size: 1.4em;
+    flex-shrink: 0;
+  }
 
-button:active {
-  -webkit-box-shadow:
-    1px 1px 13px #20232e,
-    -1px -1px 33px #545b78;
-  box-shadow:
-    1px 1px 13px #20232e,
-    -1px -1px 33px #545b78;
-  color: #d6d6d6;
-  -webkit-transition: 100ms;
-  transition: 100ms;
-}
+  .btn-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.25;
+  }
+
+  .btn-label {
+    font-size: 1em;
+  }
+
+  .btn-version {
+    font-size: 0.72em;
+    font-weight: 400;
+    opacity: 0.7;
+  }
+
+  .btn-dl-icon {
+    font-size: 0.9em;
+    opacity: 0.65;
+    margin-left: 0.25rem;
+    flex-shrink: 0;
+    transition:
+      transform 0.2s ease,
+      opacity 0.15s;
+  }
+
+  .vp-download-btn:not(.vp-download-btn--loading):hover .btn-dl-icon {
+    transform: translateY(3px);
+    opacity: 1;
+  }
 </style>

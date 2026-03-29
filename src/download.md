@@ -1,12 +1,15 @@
 ---
-title: "Download"
-description: "Download Horizon"
-layout: home
+title: 'Download'
+description: 'Download Horizon'
+layout: doc
+sidebar: false
+aside: false
 ---
 
 <script setup lang="ts">
 import { computed, ref, onMounted } from "vue";
 import downloadButt from "./componets/downloadBtn.vue";
+import allDownloads from "./componets/allDownloads.vue";
 
 const urlParams = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
 const ver = ref<string | null>(urlParams?.get("ver") ?? null);
@@ -37,68 +40,90 @@ onMounted(() => {
 });
 </script>
 
-<div class="download-container">
-  
-# Download
+<div class="download-page">
+  <div class="download-hero">
+    <h1 class="download-title">Download <span class="dl-brand">Horizon</span></h1>
+    <p class="download-subtitle">
+      <span v-if="ver">Version {{ ver }}</span>
+      <span v-else>Free &amp; open source, always and forever!</span>
+    </p>
+    <downloadButt :version="ver" :platform="platform" :arch="arch" />
+    <p v-if="isLinux" class="download-note">
+      This will download the AppImage. For distro-packaged versions (.deb, .rpm, AUR, etc.), 
+      see the <a href="docs/guides/install#linux">Linux install guide</a>, <b>or look below this for options!</b>
+    </p>
+  </div>
 
-Download {{ ver || "the latest release" }} of **Horizon**.
+  <div class="download-divider"></div>
 
-<downloadButt :version="ver" :platform="platform" :arch="arch" />
+  <allDownloads :version="ver" :platform="platform" />
 
-<p v-if="isLinux" class="alt-packages">
-  Using Linux? This download is the AppImage. For distro packages and other
-  install options, see the
-  <a href="docs/guides/install#linux">alternate package methods</a>.
-</p>
-
-Need help installing? Check out the [installation guide](docs/guides/install).
-
-Looking for a specific version or platform? Check out our [GitHub releases](https://github.com/Fchat-Horizon/Horizon/releases).
-
+  <p class="download-footer">
+    Need help? Check out the <a href="docs/guides/install">installation guide</a>.
+  </p>
 </div>
 
 <style lang="scss">
-.download-container {
-    padding: 2rem;
-    background: linear-gradient(135deg, #f9fafc, #e4ebf5);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin: 2rem auto;
-    max-width: 800px;
-    text-align: center;
+$dl-gradient: linear-gradient(120deg, #6f4bb0 30%, #faae7b 100%);
+
+.download-page {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
 }
 
-.download-container h1 {
-    margin-bottom: 1rem;
-    color: #333;
+.download-hero {
+  text-align: center;
+  padding: 2.5rem 1rem 2.5rem;
 }
 
-.alt-packages {
-    margin-top: 1rem;
-    font-size: 0.95rem;
+.download-title {
+  font-size: 2.8rem !important;
+  font-weight: 700;
+  margin-bottom: 0.5rem !important;
+  line-height: 1.15;
 }
 
- 
-.dark{ 
-.download-container {
-    padding: 2rem;
-    background: linear-gradient(135deg, #292329, #907281);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin: 2rem auto;
-    max-width: 800px;
-    text-align: center;
+.dl-brand {
+  background: $dl-gradient;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
 }
 
-.download-container h1 {
-    margin-bottom: 1rem;
-    color: #ffffff;
+.download-subtitle {
+  font-size: 1.05rem;
+  color: var(--vp-c-text-2);
+  margin-bottom: 1.75rem;
 }
 
-.alt-packages {
-    margin-top: 1rem;
-    font-size: 0.95rem;
-    color: #f4e9ef;
+.download-note {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--vp-c-text-2);
 }
+
+.download-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--vp-c-divider) 30%, var(--vp-c-divider) 70%, transparent);
+  margin: 0 0 0.5rem;
+}
+
+.download-footer {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--vp-c-text-2);
+
+  a {
+    color: var(--vp-c-brand-1);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 </style>
