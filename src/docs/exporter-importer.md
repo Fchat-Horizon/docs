@@ -1,6 +1,7 @@
 ---
 title: Exporter & Importer
 outline: deep
+description: Back up and restore your Horizon data, including settings, logs, drafts, pinned conversations, and more.
 ---
 
 # Exporter & Importer

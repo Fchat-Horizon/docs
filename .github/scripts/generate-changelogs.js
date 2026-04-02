@@ -14,14 +14,16 @@ const REPO_BASE = 'https://github.com/Fchat-Horizon/Horizon';
 const REPO_BRANCH = 'development';
 
 function rewriteRepoLinks(text) {
-  return text.replace(/\[([^\]]*)\]\((\/[^)]*)\)/g, (match, label, path) => {
-    const isDir = path.endsWith('/');
-    const type = isDir ? 'tree' : 'blob';
-    return `[${label}](${REPO_BASE}/${type}/${REPO_BRANCH}${path})`;
-  });
+  return text
+    .replace(/\[([^\]]*)\]\((\/[^)]*)\)/g, (match, label, path) => {
+      const isDir = path.endsWith('/');
+      const type = isDir ? 'tree' : 'blob';
+      return `[${label}](${REPO_BASE}/${type}/${REPO_BRANCH}${path})`;
+    })
+    .replace(/\[([^\]]*)\]\(([0-9a-f]{7,40})\)/g, (match, label, hash) => {
+      return `[${label}](${REPO_BASE}/commit/${hash})`;
+    });
 }
-
-// ---------------------------------------------------------------------------
 
 console.log(`Fetching changelog from ${CHANGELOG_URL} …`);
 const raw = await fetch(CHANGELOG_URL).then(r => {
@@ -36,7 +38,7 @@ const sections = raw
   .filter(s => VERSION_HEADING.test(s));
 
 if (!sections.length) {
-  console.error('No version sections found in changelog — check the format.');
+  console.error('No version sections found in changelog, check the format.');
   process.exit(1);
 }
 
@@ -53,6 +55,10 @@ for (const section of sections) {
   );
 
   const content = [
+    '---',
+    `description: Changelog for Horizon v${version}. New features, changes, and bug fixes.`,
+    '---',
+    '',
     `# Horizon ${version}`,
     '',
     `Download [here](https://horizn.moe/download.html?ver=v${version}).`,
@@ -67,5 +73,5 @@ for (const section of sections) {
 }
 
 console.log(
-  `\nDone — ${written} changelog file(s) written to src/docs/changelogs/.`
+  `\nDone! ${written} changelog file(s) written to src/docs/changelogs/.`
 );

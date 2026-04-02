@@ -1,5 +1,6 @@
 ---
 outline: 3
+description: F-Chat Rising features carried over and improved in Horizon, like status history, character matching, link previews, and more.
 ---
 
 # Rising Features

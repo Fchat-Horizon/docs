@@ -1,3 +1,7 @@
+---
+description: Common questions about Horizon. What it is, how it differs from Rising and 3.0, and how to get started.
+---
+
 # Frequently Asked Questions
 
 ## What is Horizon?

@@ -1,3 +1,7 @@
+---
+description: Set custom name colors and avatars for your character in Horizon using BBCode on your F-List profile.
+---
+
 # Custom Name Colors and Avatars
 
 ## Custom colors

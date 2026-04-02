@@ -1,6 +1,7 @@
 ---
 sidebar: true
 outline: 2
+description: All Horizon changelogs, from the latest release to the very first.
 ---
 
 # Changelogs

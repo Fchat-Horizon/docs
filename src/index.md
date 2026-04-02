@@ -1,6 +1,7 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
+description: Horizon is a community-driven F-Chat client with extra features, quality of life improvements, and better performance.
 
 hero:
   text: 'Look to the <span class="pretty-name">Horizon</span>'

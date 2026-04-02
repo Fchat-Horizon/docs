@@ -1,6 +1,6 @@
 ---
 title: 'Download'
-description: 'Download Horizon'
+description: 'Download Horizon for Windows, macOS, and Linux.'
 layout: doc
 sidebar: false
 aside: false

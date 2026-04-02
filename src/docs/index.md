@@ -1,5 +1,7 @@
 ---
 outline: deep
+title: Docs
+description: Docs, guides, and wiki for Horizon.
 ---
 
 # Docs

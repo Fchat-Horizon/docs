@@ -1,5 +1,6 @@
 ---
 outline: deep
+description: Quality of life improvements in Horizon over F-Chat 3.0 and Rising, like the settings menu, message drafts, keyboard shortcuts, and more.
 ---
 
 # Quality of life changes

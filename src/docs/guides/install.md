@@ -1,5 +1,6 @@
 ---
 outline: deep
+description: How to install Horizon on Windows, macOS, and Linux.
 ---
 
 # Installing Horizon

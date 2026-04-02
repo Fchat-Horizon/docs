@@ -1,3 +1,7 @@
+---
+description: Create your own sound themes for Horizon. File structure, configuration, and packaging.
+---
+
 # Sound Theme Creation Guide
 
 > [!WARNING]  

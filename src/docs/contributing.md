@@ -1,5 +1,6 @@
 ---
 outline: 2-3
+description: How to contribute to Horizon. Setting up your dev environment, building, and code quality guidelines.
 ---
 
 # Contributing to Horizon

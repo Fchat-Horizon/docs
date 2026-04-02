@@ -1,3 +1,7 @@
+---
+description: How to migrate your chat logs and data from F-Chat Rising to Horizon.
+---
+
 # Moving logs from Rising
 
 ## Folder locations

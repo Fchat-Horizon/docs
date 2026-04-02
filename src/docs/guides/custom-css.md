@@ -1,3 +1,7 @@
+---
+description: Customize Horizon's appearance with your own CSS. Selectors, variables, and examples.
+---
+
 # Custom User Styles
 
 > [!INFO]  

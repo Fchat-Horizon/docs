@@ -1,5 +1,6 @@
 ---
 outline: deep
+description: What Horizon adds on top of F-Chat 3.0 and Rising, like themes, custom CSS, sound packs, and link previews.
 ---
 
 # Features

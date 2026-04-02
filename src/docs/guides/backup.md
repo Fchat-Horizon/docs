@@ -1,3 +1,7 @@
+---
+description: How to back up your Horizon data, using the built-in exporter or manually copying files.
+---
+
 # Backing up your data
 
 > [!INFO]

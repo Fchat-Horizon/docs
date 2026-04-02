@@ -1,5 +1,6 @@
 ---
 outline: deep
+description: Get in touch with the Horizon team. Report bugs, request features, or just say hi.
 ---
 
 # Contact
