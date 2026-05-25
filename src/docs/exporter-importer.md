@@ -59,6 +59,9 @@ characters/<character>/drafts.txt
 
 ### Importing from the original client
 
+> [!TIP]
+> Using the **web client** in your browser instead of a desktop install? Its logs live in browser storage, not on disk. See [Importing from the F-Chat web client](./guides/f-porter.md) for how to pull those into a Horizon export with the F-Porter userscript.
+
 Horizon will automatically prompt you to import your data when you first launch it, if it detects compatible Vanilla client data. However, to do it manually:
 
 1. Open the hamburger menu, go to `Horizon → Export Horizon Data`

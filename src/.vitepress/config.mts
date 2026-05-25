@@ -188,6 +188,10 @@ export default defineConfig({
             link: '/docs/exporter-importer',
           },
           {
+            text: 'Importing from the web client',
+            link: '/docs/guides/f-porter',
+          },
+          {
             text: 'Custom name colors and avatars',
             link: '/docs/guides/colors-and-avatars',
           },
