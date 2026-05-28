@@ -4,6 +4,18 @@ description: Common questions about Horizon. What it is, how it differs from Ris
 
 # Frequently Asked Questions
 
+## I'm a Rising user and I can't connect anymore!
+
+F-Chat Rising is no longer maintained, and its client can no longer connect to chat. The good news is that Horizon is its direct, community-run continuation: it has [every feature Rising had](rising) (minus "the one"), it keeps getting new features and bug fixes, and you can bring your existing logs and settings along.
+
+To get going:
+
+1. [Download Horizon](../download) for your platform.
+2. [Install it](guides/install) following the guide for your OS.
+3. [Move your logs and settings over](guides/moving-from-rising), you should be prompted to do this automatically.
+
+Then log in with your usual F-List account and you're back in business. If you get stuck, [reach out](../contact) and we'll help you sort it out.
+
 ## What is Horizon?
 
 Horizon is a fork of the now defunct F-Chat Rising, which itself was a fork of the official 3.0 standalone client. A “fork” basically just means that we use the same base source code, but made changes to it to suit our needs. At this point Horizon has had enough changes from both Rising and 3.0 that it’s considerably different already.
