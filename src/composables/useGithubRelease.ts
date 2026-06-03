@@ -5,36 +5,63 @@ interface ReleaseAsset {
   browser_download_url: string;
 }
 
-const cache = new Map<
-  string,
-  Promise<{ tag_name: string; assets: ReleaseAsset[] }>
->();
-
-function buildApiUrl(version?: string | null): string {
-  return version
-    ? `https://api.github.com/repos/Fchat-Horizon/Horizon/releases/tags/${version}`
-    : `https://api.github.com/repos/Fchat-Horizon/Horizon/releases/latest`;
+interface GithubRelease {
+  tag_name: string;
+  assets: ReleaseAsset[];
 }
 
-async function fetchRelease(url: string) {
+interface UseGithubReleaseOptions {
+  repo?: string;
+  // ^ /releases/latest skips prereleases, so beta-only projects need the list endpoint.
+  includePrereleases?: boolean;
+  // Prefix for reconstructing an asset URL when release metadata can't be fetched.
+  assetPrefix?: string;
+}
+
+const DEFAULTS: Required<UseGithubReleaseOptions> = {
+  repo: 'Fchat-Horizon/Horizon',
+  includePrereleases: false,
+  assetPrefix: 'F-Chat.Horizon-',
+};
+
+const cache = new Map<string, Promise<GithubRelease>>();
+
+function buildApiUrl(
+  repo: string,
+  includePrereleases: boolean,
+  version?: string | null,
+): string {
+  const base = `https://api.github.com/repos/${repo}/releases`;
+  if (version) return `${base}/tags/${version}`;
+  if (includePrereleases) return `${base}?per_page=1`;
+  return `${base}/latest`;
+}
+
+async function fetchRelease(url: string): Promise<GithubRelease> {
   const response = await fetch(url);
   if (!response.ok) throw new Error(`GitHub API ${response.status}`);
-  return response.json();
+  const data = await response.json();
+  // The list endpoint returns an array (newest first); unwrap it.
+  return Array.isArray(data) ? data[0] : data;
 }
 
-export function useGithubRelease(version: Ref<string | null | undefined>) {
+export function useGithubRelease(
+  version: Ref<string | null | undefined>,
+  options: UseGithubReleaseOptions = {},
+) {
+  const { repo, includePrereleases, assetPrefix } = { ...DEFAULTS, ...options };
   const downloadVersion = ref<string | undefined>(undefined);
   const releaseAssets = ref<ReleaseAsset[]>([]);
 
   async function resolve() {
-    const url = buildApiUrl(version.value);
+    const url = buildApiUrl(repo, includePrereleases, version.value);
     try {
       if (!cache.has(url)) {
         cache.set(url, fetchRelease(url));
       }
       const data = await cache.get(url)!;
-      downloadVersion.value = data.tag_name;
-      releaseAssets.value = data.assets ?? [];
+      downloadVersion.value = data?.tag_name;
+      releaseAssets.value = data?.assets ?? [];
     } catch {
       cache.delete(url);
       downloadVersion.value = undefined;
@@ -44,7 +71,7 @@ export function useGithubRelease(version: Ref<string | null | undefined>) {
 
   onMounted(resolve);
   watch(version, () => {
-    const url = buildApiUrl(version.value);
+    const url = buildApiUrl(repo, includePrereleases, version.value);
     cache.delete(url);
     resolve();
   });
@@ -54,7 +81,7 @@ export function useGithubRelease(version: Ref<string | null | undefined>) {
     if (asset) return asset.browser_download_url;
     if (!downloadVersion.value) return '#';
     const ver = downloadVersion.value.replace(/^v/, '');
-    return `https://github.com/Fchat-Horizon/Horizon/releases/download/${downloadVersion.value}/F-Chat.Horizon-${ver}${suffix}`;
+    return `https://github.com/${repo}/releases/download/${downloadVersion.value}/${assetPrefix}${ver}${suffix}`;
   }
 
   return { downloadVersion, releaseAssets, assetUrl };

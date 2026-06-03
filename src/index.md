@@ -74,6 +74,12 @@ features:
     details: Brand new themes, and constantly adding more. You'll never get bored of how the client looks, guaranteed
 ---
 
+<script setup lang="ts">
+import solsticeBanner from "./componets/solsticeBanner.vue";
+</script>
+
+<solsticeBanner />
+
 <style lang="scss">
 $pretty-gradient: linear-gradient(120deg, #6f4bb0 30%, #faae7b 100%);
 $love-gradient: linear-gradient(120deg, #ff8fb3 20%, #ff476f 60%, #c7172f 100%);

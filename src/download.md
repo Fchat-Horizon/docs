@@ -10,6 +10,7 @@ aside: false
 import { computed, ref, onMounted } from "vue";
 import downloadButt from "./componets/downloadBtn.vue";
 import allDownloads from "./componets/allDownloads.vue";
+import solsticeDownload from "./componets/solsticeDownload.vue";
 
 const urlParams = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
 const ver = ref<string | null>(urlParams?.get("ver") ?? null);
@@ -57,6 +58,8 @@ onMounted(() => {
   <div class="download-divider"></div>
 
   <allDownloads :version="ver" :platform="platform" />
+
+  <solsticeDownload />
 
   <p class="download-footer">
     Need help? Check out the <a href="docs/guides/install">installation guide</a>.
