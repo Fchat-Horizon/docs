@@ -9,7 +9,7 @@ Introduced in version 2.2.0, channel groups are an expansion of the channel pinn
 ![Channel groups](images/channel_groups/grouped_pins.gif)
 
 > [!INFO]
-> If you previously pinned channels, Horizon automatically moves them into a group for you the first time you open the new version. Nothing is lost, and they'll visually appear the exact same as they used to until you create another group.
+> If you previously pinned channels, Horizon automatically moves them into a group for you the first time you open the new version. Nothing is lost, and they'll function the same as they used to.
 
 ## Creating a group
 
@@ -55,6 +55,6 @@ Yes. Your groups, their names, their order, which channels are in them, and whet
 
 ## What if I just want my classic pinned channels?
 
-That's totally fine, you don't need to create a group at all! Simply clicking the pin/unpin button without creating a group will pin it just like you remember it. The only change you'll notice in this update is that the pinned channels are visually separated from unpinned channels.
+That's totally fine, you don't need to create a group at all! Simply clicking the pin/unpin button without creating a group will pin it just like you remember it. The only change you'll notice in this update is that the pinned channels are visually separated from unpinned channels. You will only see the group headers themselves once you create a second group.
 
 ![Pinned, ungrouped channels](images/channel_groups/pinned.png)
