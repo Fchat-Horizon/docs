@@ -197,6 +197,7 @@ export default defineConfig({
           },
           { text: 'Creating sound themes', link: '/docs/guides/sound-themes' },
           { text: 'Custom user styles', link: '/docs/guides/custom-css' },
+          { text: 'Channel groups', link: '/docs/channel-groups' },
         ],
       },
       {
