@@ -14,7 +14,6 @@
       <div class="solstice-banner-text">
         <p class="solstice-banner-title">
           Horizon, now on <span class="solstice-banner-brand">Android</span>
-          <span class="solstice-banner-badge">Beta</span>
         </p>
         <p class="solstice-banner-sub">
           Meet <b>Solstice</b>, our community fork for mobile. Take F-Chat with
@@ -78,21 +77,6 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-  }
-
-  .solstice-banner-badge {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 0.5rem;
-    font-size: 0.6rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 0.15rem 0.5rem;
-    border-radius: 1em;
-    color: #fff;
-    background: #6f4bb0;
-    -webkit-text-fill-color: #fff;
   }
 
   .solstice-banner-sub {

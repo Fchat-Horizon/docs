@@ -5,10 +5,10 @@
   import { ref } from 'vue';
   import { useGithubRelease } from '../composables/useGithubRelease';
 
-  // Solstice ships beta builds only, so pull the newest prerelease from its own repo.
+  // Pull the latest stable release from Solstice's own repo.
   const { downloadVersion, assetUrl } = useGithubRelease(ref(null), {
     repo: 'Fchat-Horizon/Solstice',
-    includePrereleases: true,
+    includePrereleases: false,
     assetPrefix: 'solstice-',
   });
 </script>
@@ -26,7 +26,6 @@
       <div class="solstice-headings">
         <h2 class="solstice-title">
           On the go? Try <span class="solstice-brand">Solstice</span>
-          <span class="beta-badge">Beta</span>
         </h2>
         <p class="solstice-sub">
           Solstice is an independent fork of Horizon for <b>Android</b>, built
@@ -65,9 +64,8 @@
     </span>
 
     <p class="solstice-note">
-      <b>Beta software.</b> Solstice is maintained separately from Horizon,
-      meaning the Horizon team isn't responsible for it. Please report any
-      issues on the
+      Solstice is maintained separately from Horizon, meaning the Horizon team
+      isn't responsible for it. Please report any issues on the
       <a
         href="https://github.com/Fchat-Horizon/Solstice"
         target="_blank"
@@ -123,21 +121,6 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-  }
-
-  .beta-badge {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 0.5rem;
-    font-size: 0.65rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 0.15rem 0.5rem;
-    border-radius: 1em;
-    color: #fff;
-    background: #6f4bb0;
-    -webkit-text-fill-color: #fff;
   }
 
   .solstice-sub {
