@@ -1,6 +1,10 @@
 <script setup lang="ts">
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-  import { faAndroid, faGithub } from '@fortawesome/free-brands-svg-icons';
+  import {
+    faAndroid,
+    faApple,
+    faGithub,
+  } from '@fortawesome/free-brands-svg-icons';
   import { faDownload } from '@fortawesome/free-solid-svg-icons';
   import { ref } from 'vue';
   import { useGithubRelease } from '../composables/useGithubRelease';
@@ -19,49 +23,88 @@
     class="solstice-card"
   >
     <div class="solstice-head">
-      <FontAwesomeIcon
-        :icon="faAndroid"
-        class="solstice-os-icon"
-      />
+      <div class="solstice-os-icons">
+        <FontAwesomeIcon
+          :icon="faAndroid"
+          class="solstice-os-icon solstice-os-icon--android"
+        />
+        <FontAwesomeIcon
+          :icon="faApple"
+          class="solstice-os-icon solstice-os-icon--apple"
+        />
+      </div>
       <div class="solstice-headings">
         <h2 class="solstice-title">
           On the go? Try <span class="solstice-brand">Solstice</span>
         </h2>
         <p class="solstice-sub">
-          Solstice is an independent fork of Horizon for <b>Android</b>, built
-          with the Horizon team's blessing.
+          Solstice is an independent fork of Horizon for
+          <b>Android and iOS</b>, built with the Horizon team's blessing.
         </p>
       </div>
     </div>
 
-    <a
+    <div
       v-if="downloadVersion"
-      :href="assetUrl('-solstice.apk')"
-      class="solstice-dl-btn"
+      class="solstice-dl-row"
     >
-      <FontAwesomeIcon
-        :icon="faAndroid"
-        class="btn-os-icon"
-      />
-      <span class="btn-body">
-        <span class="btn-label">Download the APK</span>
-        <span class="btn-version">{{ downloadVersion }}</span>
-      </span>
-      <FontAwesomeIcon
-        :icon="faDownload"
-        class="btn-dl-icon"
-      />
-    </a>
+      <a
+        :href="assetUrl('-solstice.apk')"
+        class="solstice-dl-btn"
+      >
+        <FontAwesomeIcon
+          :icon="faAndroid"
+          class="btn-os-icon"
+        />
+        <span class="btn-body">
+          <span class="btn-label">Android APK</span>
+          <span class="btn-version">{{ downloadVersion }}</span>
+        </span>
+        <FontAwesomeIcon
+          :icon="faDownload"
+          class="btn-dl-icon"
+        />
+      </a>
+      <a
+        :href="assetUrl('.ipa')"
+        class="solstice-dl-btn"
+      >
+        <FontAwesomeIcon
+          :icon="faApple"
+          class="btn-os-icon"
+        />
+        <span class="btn-body">
+          <span class="btn-label">iOS IPA</span>
+          <span class="btn-version">{{ downloadVersion }}</span>
+        </span>
+        <FontAwesomeIcon
+          :icon="faDownload"
+          class="btn-dl-icon"
+        />
+      </a>
+    </div>
     <span
       v-else
       class="solstice-dl-btn solstice-dl-btn--loading"
     >
       <FontAwesomeIcon
-        :icon="faAndroid"
+        :icon="faDownload"
         class="btn-os-icon"
       />
       <span class="btn-label">Loading&hellip;</span>
     </span>
+
+    <p class="solstice-note">
+      On iOS the IPA installs through
+      <a
+        href="https://sidestore.io/"
+        target="_blank"
+        rel="noopener"
+        >SideStore</a
+      >, which re-signs the app on-device with your Apple ID (no paid developer
+      account needed). You can also add the SideStore source from the repo for
+      one-tap installs and automatic updates.
+    </p>
 
     <p class="solstice-note">
       Solstice is maintained separately from Horizon, meaning the Horizon team
@@ -95,11 +138,23 @@
     margin-bottom: 1.25rem;
   }
 
-  .solstice-os-icon {
-    font-size: 2rem;
+  .solstice-os-icons {
+    display: flex;
+    gap: 0.55rem;
     flex-shrink: 0;
     margin-top: 0.15rem;
-    color: #3ddc84;
+  }
+
+  .solstice-os-icon {
+    font-size: 1.9rem;
+
+    &--android {
+      color: #3ddc84;
+    }
+
+    &--apple {
+      color: var(--vp-c-text-1);
+    }
   }
 
   .solstice-headings {
@@ -127,6 +182,12 @@
     font-size: 0.95rem;
     color: var(--vp-c-text-2);
     margin: 0;
+  }
+
+  .solstice-dl-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
   }
 
   .solstice-dl-btn {
@@ -218,6 +279,20 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+
+  @media (max-width: 640px) {
+    .solstice-dl-row {
+      flex-direction: column;
+    }
+
+    .solstice-dl-btn {
+      width: 100%;
+    }
+
+    .solstice-dl-btn .btn-dl-icon {
+      margin-left: auto;
     }
   }
 </style>

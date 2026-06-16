@@ -1,23 +1,29 @@
 <script setup lang="ts">
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-  import { faAndroid } from '@fortawesome/free-brands-svg-icons';
+  import { faAndroid, faApple } from '@fortawesome/free-brands-svg-icons';
   import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 </script>
 
 <template>
   <section class="solstice-banner">
     <div class="solstice-banner-inner">
-      <FontAwesomeIcon
-        :icon="faAndroid"
-        class="solstice-banner-icon"
-      />
+      <div class="solstice-banner-icons">
+        <FontAwesomeIcon
+          :icon="faAndroid"
+          class="solstice-banner-icon solstice-banner-icon--android"
+        />
+        <FontAwesomeIcon
+          :icon="faApple"
+          class="solstice-banner-icon solstice-banner-icon--apple"
+        />
+      </div>
       <div class="solstice-banner-text">
         <p class="solstice-banner-title">
-          Horizon, now on <span class="solstice-banner-brand">Android</span>
+          Horizon, now on <span class="solstice-banner-brand">mobile</span>
         </p>
         <p class="solstice-banner-sub">
-          Meet <b>Solstice</b>, our community fork for mobile. Take F-Chat with
-          you!
+          Meet <b>Solstice</b>, our community fork for Android and iOS. Take
+          F-Chat with you!
         </p>
       </div>
       <a
@@ -53,10 +59,22 @@
     background: var(--vp-c-bg-soft);
   }
 
+  .solstice-banner-icons {
+    display: flex;
+    gap: 0.6rem;
+    flex-shrink: 0;
+  }
+
   .solstice-banner-icon {
     font-size: 2.4rem;
-    color: #3ddc84;
-    flex-shrink: 0;
+
+    &--android {
+      color: #3ddc84;
+    }
+
+    &--apple {
+      color: var(--vp-c-text-1);
+    }
   }
 
   .solstice-banner-text {
