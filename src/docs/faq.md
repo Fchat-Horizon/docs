@@ -55,11 +55,7 @@ We are planning on making a version for Android, and maaaaaybe an iOS version to
 
 ## I’m using 3.0 in my web browser. Can I keep my logs and settings?
 
-_~~Sadly no, we can’t import these because they’re stored with your browser’s cache data. You can still export them to both HTML or text files and read them after, but because of all the differences between individual web browsers and platforms, making a one-size-fits-all solution for importing these is sadly unfeasible for us.~~_
-
-**Yes!** Soon-ish. We're working on a browser userscript that would allow you to export your logs from the web version for use in the desktop version of 3.0— and by extension Horizon. You'll find it here, and maybe in a few other places too once it's done.
-
-You'll need a browser addon like [Tampermonkey](https://www.tampermonkey.net/index.php) to run it though.
+**Yes!** Please see the guide [here](guides/f-porter.md) for instructions on exporting your browser logs and importing them into Horizon.
 
 ## Why do custom name colors only show up after moving my mouse over someone?
 
