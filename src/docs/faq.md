@@ -31,7 +31,7 @@ It’s an alternative client to the official 3.0/2.0/1.0 F-Chat clients, develop
 
 For a slightly less obtuse answer, we do have [a list](https://github.com/Fchat-Horizon/Horizon/blob/main/CONTRIBUTORS.md) of people who contributed code to the project on our GitHub. But everyone who has made a suggestion, bug report or just spread the word is part of the project in a way.
 
-## What advantage/thing do I get as opposed to F-chat 3.0?
+## What advantage/thing do I get as opposed to F-Chat 3.0?
 
 The full list of additional features and quality of life changes is probably way too big for a short FAQ item like this, but here are some of our favourite additions to Horizon:
 

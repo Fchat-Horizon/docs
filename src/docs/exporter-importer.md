@@ -28,9 +28,11 @@ characters/<character>/drafts.txt
 
 ## Exporting
 
-1. Open the hamburger menu, go to `Horizon → Export Horizon Data`
-2. Select which data types to include:
-   - General settings
+1. Open the **menu** (the ☰ icon in the top-left) and go to `Horizon → Manage Data`
+   - (On Mac, you'll need to click the `Horizon` app menu instead)
+2. Select the **Export** tab
+3. Select which data types to include:
+   - Global settings
    - Character settings
    - Chat logs
    - Message drafts
@@ -38,9 +40,9 @@ characters/<character>/drafts.txt
    - Pinned EIcons
    - Recent conversations/channels
    - Hidden users
-3. Select which characters to include (you can use "Select All" or choose individually)
-4. Click the export button
-5. The export is saved as `horizon-export-YYYY-MM-DDTHH-MM-SS.zip` in your Downloads folder (or a location you choose)
+4. Select which characters to include (you can use "Select All" or choose individually)
+5. Click the export button
+6. The export is saved as `horizon-export-YYYY-MM-DDTHH-MM-SS.zip` in your Downloads folder (or a location you choose)
 
 > [!WARNING]
 > While this doesn't include your password, these backups do include all your logs and your username. This can obviously be used to deanonymize you, so avoid sharing these logs with anyone... Duh.
@@ -49,23 +51,25 @@ characters/<character>/drafts.txt
 
 ### Importing from an export
 
-1. Open the hamburger menu, go to `Horizon → Export Horizon Data`
-2. Scroll to the bottom section titled "Import from export"
+1. Open the **menu** (the `☰` icon in the top-left) and go to `Horizon → Manage Data`
+   - (On Mac, you'll need to click the `Horizon` app menu instead)
+2. Select the **Import** tab
 3. Click "Select Export" to choose your `horizon-export-YYYY-MM-DDTHH-MM-SS.zip` file
 4. Once selected, choose which data to import (general settings, character settings, logs, drafts, pinned conversations, pinned EIcons, recents, and hidden users)
 5. Select which characters to include
 6. Choose whether to "overwrite" or "merge" with existing data
 7. Click "Restore export" to complete the import
 
-### Importing from the original client
+### Importing from Vanilla F-Chat/Rising
 
 > [!TIP]
 > Using the **web client** in your browser instead of a desktop install? Its logs live in browser storage, not on disk. See [Importing from the F-Chat web client](./guides/f-porter.md) for how to pull those into a Horizon export with the F-Porter userscript.
 
 Horizon will automatically prompt you to import your data when you first launch it, if it detects compatible Vanilla client data. However, to do it manually:
 
-1. Open the hamburger menu, go to `Horizon → Export Horizon Data`
-2. Select the "Import from Vanilla" tab
+1. Open the **menu** (the `☰` icon in the top-left) and go to `Horizon → Manage Data`
+   - (On Mac, you'll need to click the `Horizon` app menu instead)
+2. Select the **Import from Vanilla** tab
 3. (Optional) If Horizon can't find your Vanilla data automatically, click "Browse…" to manually select the folder
 4. Choose which data to import:
    - App-wide settings
@@ -81,13 +85,6 @@ Horizon will automatically prompt you to import your data when you first launch 
 - If you choose "overwrite", files in your data directory will be replaced by the imported files.
 - If you choose "merge", only missing files are added; existing files are preserved.
 - Drafts files are only overwritten if the existing file is not empty.
-
-## Vanilla F-Chat Import
-
-- Horizon can import data from the official F-Chat client (As well as Rising / {maybe} Frolic).
-- You can select the vanilla data directory manually, or Horizon will try to find it automatically.
-- Supported imports: character logs, character settings, pinned EIcons, general settings.
-- You can select which characters and data types to import, and whether to overwrite or merge.
 
 ## CLI Tools
 
