@@ -6,7 +6,7 @@ description: Common questions about Horizon. What it is, how it differs from Ris
 
 ## I'm a Rising user and I can't connect anymore!
 
-F-Chat Rising is no longer maintained, and its client can no longer connect to chat. The good news is that Horizon is its direct, community-run continuation: it has [every feature Rising had](rising) (minus "the one"), it keeps getting new features and bug fixes, and you can bring your existing logs and settings along.
+F-Chat Rising is no longer maintained, and its client can no longer connect to chat. This was done for many reasons, including security issues; you can learn more in [the official newspost.](https://www.f-list.net/newspost/432/) The good news is that Horizon is its direct, community-run continuation: it has [every feature Rising had](features-overview#rising-features) (minus "the one"), it keeps getting new features and bug fixes, and you can bring your existing logs and settings along.
 
 To get going:
 
@@ -23,11 +23,11 @@ Our goal is for Horizon to be a community-driven project, rather than just a per
 
 ## What’s a ‘third-party client’?
 
-It’s an alternative client to the official 3.0 2.0 1.0 F-chat clients, developed by (and for) members of the F-List community. It’s not an alternative to the whole F-List ecosystem— you’ll still be talking to and dealing with the same people, but you’ll be using a different program for it.
+It’s an alternative client to the official 3.0/2.0/1.0 F-Chat clients, developed by (and for) members of the F-List community. It’s not an alternative to the whole F-List ecosystem— you’ll still be talking to and dealing with the same people, but you’ll be using a different program for it.
 
 ## Who is making Horizon?
 
-You! And the rest of the community.
+**You!** And the rest of the community.
 
 For a slightly less obtuse answer, we do have [a list](https://github.com/Fchat-Horizon/Horizon/blob/main/CONTRIBUTORS.md) of people who contributed code to the project on our GitHub. But everyone who has made a suggestion, bug report or just spread the word is part of the project in a way.
 
@@ -41,16 +41,7 @@ The full list of additional features and quality of life changes is probably way
 - Custom name colours
 - Way more themes than both vanilla and Rising. You can even go way in depth with customizing them by using your own custom CSS.
 - Way better Linux support.
-- [Every feature that came with Rising](rising)
-
-## I’m using Rising right now… Why should I switch?
-
-Because we fixed the bug that made the text box on the bottom cut off occasionally.
-Also because you’d still be getting new features and fixes since the creator of Rising quit, but I think that text cut off bug might be the single biggest reason why anyone would want to switch.
-
-I mean, I know it would convince me…
-
-Also something about using around 400mb of RAM less per character tab and a bunch of other [new features](features-overview). And I _guess_ we might have fixed a ton of other bugs too.
+- [Every feature that came with Rising](features-overview#rising-features), along with improvements to said features and overall lower RAM usage.
 
 ## How do I use it? Which platforms are supported?
 
@@ -58,17 +49,15 @@ Right now we have versions for Windows, macOS and Linux. These are standalone ap
 
 We are planning on making a version for Android, and maaaaaybe an iOS version too, but we can’t give an ETA for when this mobile version will be released.
 
-## I’m using Rising or the official 3.0 standalone client. Can I keep my logs and settings?
+## I’m using the official 3.0 standalone client. Can I keep my logs and settings?
 
-Yes! [Here’s how](guides/moving-from-rising).
-
-We’re working on a built-in tool that will automatically do this for you, expect this to come out soon.
+**Yes!** You should be automatically prompted to import your logs and settings when you first sign in, but [this guide](guides/moving-from-rising) can walk you through the manual process as well.
 
 ## I’m using 3.0 in my web browser. Can I keep my logs and settings?
 
 _~~Sadly no, we can’t import these because they’re stored with your browser’s cache data. You can still export them to both HTML or text files and read them after, but because of all the differences between individual web browsers and platforms, making a one-size-fits-all solution for importing these is sadly unfeasible for us.~~_
 
-Yes! Soon-ish. We're working on a browser userscript that would allow you to export your logs from the web version for use in the desktop version of 3.0— and by extension Horizon. You'll find it here, and maybe in a few other places too once it's done.
+**Yes!** Soon-ish. We're working on a browser userscript that would allow you to export your logs from the web version for use in the desktop version of 3.0— and by extension Horizon. You'll find it here, and maybe in a few other places too once it's done.
 
 You'll need a browser addon like [Tampermonkey](https://www.tampermonkey.net/index.php) to run it though.
 
@@ -76,7 +65,7 @@ You'll need a browser addon like [Tampermonkey](https://www.tampermonkey.net/ind
 
 The short answer: because it's complicated™, but we’re working on it.
 
-The slightly less short answer is that the existing system that’s being used for caching profile data (so that we don’t have to barrage F-List’s servers) was not built for loading all those profiles at once, so it’d make the app really chug on lower end computers. We’re actively looking into rewriting this cache system, both to get it to run smoother and to let it more comfortably automatically load names.
+The slightly less short answer is that the existing system from Rising that’s being used for caching profile data (so that we don’t have to barrage F-List’s servers) was not built for loading all those profiles at once, so it’d make the app really chug on lower end computers. We’re actively looking into rewriting this cache system, both to get it to run smoother and to let it more comfortably automatically load names.
 
 ## I have a really cool suggestion for a feature, or discovered an annoying bug!
 

@@ -171,7 +171,7 @@ export default defineConfig({
           },
           {
             text: 'Rising Features',
-            link: '/docs/rising',
+            link: '/docs/features-overview#rising-features',
           },
         ],
       },
