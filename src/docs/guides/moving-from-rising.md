@@ -33,7 +33,7 @@ These folders might be hidden by default, so you may need to enable a setting to
 Currently, there's two ways of moving your logs over: using the built-in importer, or manually copying the log files. The importer requires less work from you and is our recommended way of doing it.
 
 > [!TIP]
-> Using the **web client** in your browser instead of a desktop install? Its logs live in browser storage, not on disk. See [Importing from the F-Chat web client](./guides/f-porter.md) for how to pull those into a Horizon export with the F-Porter userscript.
+> Using the **web client** in your browser instead of a desktop install? Its logs live in browser storage, not on disk. See [Importing from the F-Chat web client](/docs/guides/f-porter.md) for how to pull those into a Horizon export with the F-Porter userscript.
 
 ### With the Importer (Recommended)
 
