@@ -90,4 +90,4 @@ There's an integrated EIcon search to find whichever silly icon matches your cur
 
 ### Automatic Ads
 
-After writing up your ad(s), Horizon can automatically post those ads for you in your channels, taking away the need to manually post ads repeatedly. You can pick how often they post so that you're not constantly spamming channels, and you can specify which types of ads will post to which channels in case you have different things you've looking for in each room.
+After writing up your ad(s), Horizon can automatically post those ads for you in your channels, taking away the need to manually post ads repeatedly. You can pick how often they post so that you're not constantly spamming channels, and you can specify which types of ads will post to which channels in case you have different things you're looking for in each room.
