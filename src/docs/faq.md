@@ -6,7 +6,7 @@ description: Common questions about Horizon. What it is, how it differs from Ris
 
 ## I'm a Rising user and I can't connect anymore!
 
-F-Chat Rising is no longer maintained, and its client can no longer connect to chat. This was done for many reasons, including security issues; you can learn more in [the official newspost.](https://www.f-list.net/newspost/432/) The good news is that Horizon is its direct, community-run continuation: it has [every feature Rising had](features-overview#rising-features) (minus "the one"), it keeps getting new features and bug fixes, and you can bring your existing logs and settings along.
+F-Chat Rising is no longer maintained, [and its client can no longer connect to chat.](https://www.f-list.net/newspost/432/) The good news is that Horizon is its direct, community-run continuation: it has [every feature Rising had](features-overview#rising-features) (minus "the one"), it keeps getting new features and bug fixes, and you can bring your existing logs and settings along.
 
 To get going:
 
@@ -66,9 +66,9 @@ You can submit these on our GitHub, Discord or directly reach out to us via emai
 Firstly, thank you for wanting to lend a hand in directly developing Horizon. No matter if you’re just trying to fix a bug that has bothered you for ages, or you have a really cool feature that you want to share. All your contributions are very much appreciated.
 If you’re looking for help in getting the dev environment set up, check out this page on our wiki.
 
-If you’re looking for things to do, our GitHub issue tracker is the most comprehensive list of features/ bugs that need some attention. We also have a specific tag for issues we think require very little knowledge of the codebase and should be pretty easy to do for anyone who’s mildly familiar with programming.
+If you’re looking for things to do, our [GitHub issue tracker](https://github.com/Fchat-Horizon/Horizon/issues) is the most comprehensive list of features/ bugs that need some attention. We also have a [specific tag](https://github.com/Fchat-Horizon/Horizon/issues?q=is%3Aissue%20state%3Aopen%20label%3Afreebie) for issues we think require very little knowledge of the codebase and should be pretty easy to do for anyone who’s mildly familiar with programming.
 
-If you require direct help while trying to work on something, our Discord is the easiest way to directly reach out to maintainers and contributors.
+If you require direct help while trying to work on something, our [Discord](https://discord.gg/JYuxqNVNtP) is the easiest way to directly reach out to maintainers and contributors.
 
 ## How much RAM is required to run Horizon?
 

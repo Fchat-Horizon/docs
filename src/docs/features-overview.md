@@ -35,17 +35,17 @@ For users who want an easier way to know the gender of the character they're tal
 
 Horizon has a built-in, automatic log backup system. You can set it to run as soon as you open/close the app, at specific intervals, or at specific times of the day, and you can choose which characters are backed up and what exactly is backed up from those characters. These settings can be setup within the **Manage Data** menu.
 
-## Quick Jumper
-
-![Quick Jumper](images/quick-jump.png)
-
-Press `Ctrl + T` to open the Quick Jump modal! This will let you quickly jump to a specific channel, conversation, open a new PM, or find one of your friends, all from one convenient keyboard shortcut.
-
 ## Channel Grouping
 
 ![Channel Grouping](images/channel_groups/grouped_pins.gif)
 
 In addition to the existing way of pinning channels, you're able to **group** your pinned channels with Horizon, letting you categorize them however you see fit without any loss in functionality. [Read more about it here!](channel-groups)
+
+## Quick Jumper
+
+![Quick Jumper](images/quick-jump.png)
+
+Press `Ctrl + T` to open the Quick Jump modal! This will let you quickly jump to a specific channel, conversation, open a new PM, or find one of your friends, all from one convenient keyboard shortcut.
 
 ## Automatic Updates
 
@@ -55,7 +55,9 @@ Horizon has a built in updater along with an (optional) automatic update process
 
 ## Custom Character Colors & High Quality Portraits
 
-Want high quality portraits? Simply place `[url=link.to.url.com]Horizon Portrait[/url]` in your characters bio. Want a custom color? Do `[color=colorname]Horizon Color[/color]` to set one as well!
+![Custom Character Color & Animated Portrait](images/animatedicon-customcolor.gif)
+
+Want high quality or animated portraits? Simply place `[url=link.to.url.com]Horizon Portrait[/url]` in your characters bio. Want a custom color? Do `[color=colorname]Horizon Color[/color]` to set one as well!
 
 See [the dedicated guide](guides/colors-and-avatars) for more information.
 
