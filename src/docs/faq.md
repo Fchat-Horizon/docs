@@ -57,12 +57,6 @@ We are planning on making a version for Android, and maaaaaybe an iOS version to
 
 **Yes!** Please see the guide [here](guides/f-porter.md) for instructions on exporting your browser logs and importing them into Horizon.
 
-## Why do custom name colors only show up after moving my mouse over someone?
-
-The short answer: because it's complicated™, but we’re working on it.
-
-The slightly less short answer is that the existing system from Rising that’s being used for caching profile data (so that we don’t have to barrage F-List’s servers) was not built for loading all those profiles at once, so it’d make the app really chug on lower end computers. We’re actively looking into rewriting this cache system, both to get it to run smoother and to let it more comfortably automatically load names.
-
 ## I have a really cool suggestion for a feature, or discovered an annoying bug!
 
 You can submit these on our GitHub, Discord or directly reach out to us via email or F-List notes. You can find those [here](../contact).

@@ -41,7 +41,7 @@ Horizon will automatically prompt you to import your data when you first launch 
 
 1. Open the **menu** (the ☰ icon in the top-left) and go to `Horizon → Manage Data`
    ![Manage Data](images/moving-from-rising/manage-data.png)
-   - (On Mac, you'll need to click the `Horizon` app menu instead)
+   - (On Mac, you'll need to click the `Horizon` menu bar item instead)
 2. Select the "Import from Vanilla" tab
    ![Vanilla Import](images/moving-from-rising/import-from-vanilla.png)
 3. (Optional) If Horizon can't find your Vanilla data automatically, click "Browse…" to manually select the folder

@@ -29,7 +29,7 @@ characters/<character>/drafts.txt
 ## Exporting
 
 1. Open the **menu** (the ☰ icon in the top-left) and go to `Horizon → Manage Data`
-   - (On Mac, you'll need to click the `Horizon` app menu instead)
+   - (On Mac, you'll need to click the `Horizon` menu bar item instead)
 2. Select the **Export** tab
 3. Select which data types to include:
    - Global settings
@@ -52,7 +52,7 @@ characters/<character>/drafts.txt
 ### Importing from an export
 
 1. Open the **menu** (the `☰` icon in the top-left) and go to `Horizon → Manage Data`
-   - (On Mac, you'll need to click the `Horizon` app menu instead)
+   - (On Mac, you'll need to click the `Horizon` menu bar item instead)
 2. Select the **Import** tab
 3. Click "Select Export" to choose your `horizon-export-YYYY-MM-DDTHH-MM-SS.zip` file
 4. Once selected, choose which data to import (general settings, character settings, logs, drafts, pinned conversations, pinned EIcons, recents, and hidden users)
@@ -68,7 +68,7 @@ characters/<character>/drafts.txt
 Horizon will automatically prompt you to import your data when you first launch it, if it detects compatible Vanilla client data. However, to do it manually:
 
 1. Open the **menu** (the `☰` icon in the top-left) and go to `Horizon → Manage Data`
-   - (On Mac, you'll need to click the `Horizon` app menu instead)
+   - (On Mac, you'll need to click the `Horizon` menu bar item instead)
 2. Select the **Import from Vanilla** tab
 3. (Optional) If Horizon can't find your Vanilla data automatically, click "Browse…" to manually select the folder
 4. Choose which data to import:
