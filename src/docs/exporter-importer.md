@@ -32,7 +32,7 @@ characters/<character>/drafts.txt
    - (On Mac, you'll need to click the `Horizon` menu bar item instead)
 2. Select the **Export** tab
 3. Select which data types to include:
-   - Global settings
+   - General settings
    - Character settings
    - Chat logs
    - Message drafts
