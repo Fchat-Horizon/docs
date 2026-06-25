@@ -13,9 +13,9 @@ Check out the general [quality of life changes](quality-of-life) while you're at
 
 ![Themes](images/themingsmall.jpg)
 
-Horizon comes with a whole bunch of extra themes— that you can even sync with your computer's light/dark mode, to give you something that really suits your tastes. Not enough options? You can even write your own custom CSS to style everything _just_ the way you like it. Additionally, there's different sound themes you can choose as well, in case you want something a little more pleasant to listen to.
+Horizon comes with a whole bunch of extra themes— that you can even sync with your computer's light/dark mode, to give you something that really suits your tastes. You can even pick various sound themes for your notifications, for something a little more pleasant to listen to.
 
-You can even pick various sound themes for your notifications and, in the future, make your own sound packs with ease.
+Not enough options? You can also write your own custom CSS to style everything _just_ the way you like it. In the future, you'll also be able to make your own sound themes with ease.
 
 ### Different View Modes
 
