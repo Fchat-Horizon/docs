@@ -52,8 +52,9 @@ A toast in the corner reports how many messages, conversations, and settings fil
 
 The ZIP is already in Horizon's native export format, so you import it the normal way:
 
-1. In Horizon, open the hamburger menu and go to `Horizon → Export Horizon Data`.
-2. Scroll to the **Import from export** section and click **Select Export**.
+1. Open the **menu** (the `☰` icon in the top-left) and go to `Horizon → Manage Data`
+   - (On Mac, you'll need to click the `Horizon` menu bar item instead)
+2. Open the **Import** taband click **Select Export**.
 3. Pick your `horizon-export-*.zip`.
 4. Choose which characters and data types to bring in, and whether to **overwrite** or **merge** with existing data.
 5. Click **Restore export**.

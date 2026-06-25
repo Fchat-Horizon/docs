@@ -171,7 +171,7 @@ export default defineConfig({
           },
           {
             text: 'Rising Features',
-            link: '/docs/rising',
+            link: '/docs/features-overview#rising-features',
           },
         ],
       },
@@ -179,7 +179,7 @@ export default defineConfig({
         text: 'Wiki',
         items: [
           {
-            text: 'Moving logs from Rising',
+            text: 'Moving logs from 3.0/Rising',
             link: '/docs/guides/moving-from-rising',
           },
           { text: 'Backing up your data', link: '/docs/guides/backup' },
