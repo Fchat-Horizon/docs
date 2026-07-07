@@ -32,7 +32,7 @@ const raw = await fetch(CHANGELOG_URL).then(r => {
   return r.text();
 });
 
-const VERSION_HEADING = /^## \[(\d+\.\d+\.\d+)\][^\n]*/m;
+const VERSION_HEADING = /^## \[(\d+\.\d+\.\d+)\] - (\d{4}-\d{2}-\d{2})[^\n]*/m;
 const sections = raw
   .split(/(?=^## \[\d+\.\d+\.\d+\])/m)
   .filter(s => VERSION_HEADING.test(s));
@@ -50,6 +50,7 @@ for (const section of sections) {
   if (!match) continue;
 
   const version = match[1];
+  const date = match[2];
   const body = rewriteRepoLinks(
     section.replace(/^## \[\d+\.\d+\.\d+\][^\n]*\n/, '').trim()
   );
@@ -60,6 +61,8 @@ for (const section of sections) {
     '---',
     '',
     `# Horizon ${version}`,
+    '',
+    `**Released on ${date}**`,
     '',
     `Download [here](https://horizn.moe/download.html?ver=v${version}).`,
     '',
