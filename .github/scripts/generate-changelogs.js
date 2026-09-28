@@ -26,7 +26,7 @@ function rewriteRepoLinks(text) {
 }
 
 console.log(`Fetching changelog from ${CHANGELOG_URL} …`);
-const raw = await fetch(CHANGELOG_URL).then(r => {
+const raw = await fetch(CHANGELOG_URL).then((r) => {
   if (!r.ok)
     throw new Error(`Failed to fetch changelog: ${r.status} ${r.statusText}`);
   return r.text();
@@ -35,7 +35,7 @@ const raw = await fetch(CHANGELOG_URL).then(r => {
 const VERSION_HEADING = /^## \[(\d+\.\d+\.\d+)\] - (\d{4}-\d{2}-\d{2})[^\n]*/m;
 const sections = raw
   .split(/(?=^## \[\d+\.\d+\.\d+\])/m)
-  .filter(s => VERSION_HEADING.test(s));
+  .filter((s) => VERSION_HEADING.test(s));
 
 if (!sections.length) {
   console.error('No version sections found in changelog, check the format.');
@@ -52,7 +52,7 @@ for (const section of sections) {
   const version = match[1];
   const date = match[2];
   const body = rewriteRepoLinks(
-    section.replace(/^## \[\d+\.\d+\.\d+\][^\n]*\n/, '').trim()
+    section.replace(/^## \[\d+\.\d+\.\d+\][^\n]*\n/, '').trim(),
   );
 
   const content = [
@@ -67,7 +67,7 @@ for (const section of sections) {
     `Download [here](https://horizn.moe/download.html?ver=v${version}).`,
     '',
     body,
-    ''
+    '',
   ].join('\n');
 
   writeFileSync(join(OUT_DIR, `v${version}.md`), content, 'utf8');
@@ -76,5 +76,5 @@ for (const section of sections) {
 }
 
 console.log(
-  `\nDone! ${written} changelog file(s) written to src/docs/changelogs/.`
+  `\nDone! ${written} changelog file(s) written to src/docs/changelogs/.`,
 );
