@@ -4,6 +4,9 @@
 .vitepress/dist
 
 node_modules
+
+src/docs/changelogs/
+
 # Created by https://www.toptal.com/developers/gitignore/api/linux,macos,windows,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=linux,macos,windows,visualstudiocode
 

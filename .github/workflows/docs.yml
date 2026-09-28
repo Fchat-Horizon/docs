@@ -43,8 +43,6 @@ jobs:
           cache: pnpm
       - name: Install dependencies
         run: pnpm install
-      - name: Generate changelogs from Horizon repo
-        run: node .github/scripts/generate-changelogs.js
       - name: Build
         run: pnpm docs:build
       - name: Upload artifact

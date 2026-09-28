@@ -17,8 +17,9 @@
     "vue": "^3.5.27"
   },
   "scripts": {
-    "docs:dev": "vitepress dev src",
-    "docs:build": "vitepress build src",
+    "changelogs": "node .github/scripts/generate-changelogs.js",
+    "docs:dev": "pnpm changelogs && vitepress dev src",
+    "docs:build": "pnpm changelogs && vitepress build src",
     "docs:preview": "vitepress preview src",
     "lint": "prettier --write src/",
     "check": "prettier --check src/",
