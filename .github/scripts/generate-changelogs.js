@@ -1,4 +1,4 @@
-import { writeFileSync, mkdirSync, existsSync } from 'fs';
+import { writeFileSync, mkdirSync, readdirSync, rmSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -25,6 +25,14 @@ function rewriteRepoLinks(text) {
     });
 }
 
+function existingPages() {
+  try {
+    return readdirSync(OUT_DIR).filter((f) => /^v.+\.md$/.test(f));
+  } catch {
+    return [];
+  }
+}
+
 console.log(`Fetching changelog from ${CHANGELOG_URL} …`);
 const raw = await fetch(CHANGELOG_URL).then((r) => {
   if (!r.ok)
@@ -32,54 +40,54 @@ const raw = await fetch(CHANGELOG_URL).then((r) => {
   return r.text();
 });
 
-const VERSION_HEADING = /^## \[(\d+\.\d+\.\d+)\] - (\d{4}-\d{2}-\d{2})[^\n]*/m;
-const LINK_REFERENCE = /^\[[^\]]+\]:\s+\S+\s*$/gm;
 // ^ Split on every heading so prerelease sections don't fold into the stable page above them.
-const sections = raw
-  .split(/^(?=## \[)/m)
-  .filter((s) => VERSION_HEADING.test(s));
+const sections = raw.split(/^(?=## \[)/m);
 
-if (!sections.length) {
-  console.error('No version sections found in changelog, check the format.');
-  process.exit(1);
-}
+const VERSION_HEADING = /^## \[(\d+\.\d+\.\d+)\] - (\d{4}-\d{2}-\d{2})[^\n]*/;
+const LINK_REFERENCE = /^\[[^\]]+\]:\s+\S+\s*$/gm;
 
-if (!existsSync(OUT_DIR)) mkdirSync(OUT_DIR, { recursive: true });
-
-let written = 0;
+const pages = [];
 for (const section of sections) {
   const match = section.match(VERSION_HEADING);
   if (!match) continue;
 
-  const version = match[1];
-  const date = match[2];
+  const [heading, version, date] = match;
   const body = rewriteRepoLinks(
-    section
-      .replace(/^## \[\d+\.\d+\.\d+\][^\n]*\n/, '')
-      .replace(LINK_REFERENCE, '')
-      .trim(),
+    section.slice(heading.length).replace(LINK_REFERENCE, '').trim(),
   );
 
-  const content = [
-    '---',
-    `description: Changelog for Horizon v${version}. New features, changes, and bug fixes.`,
-    '---',
-    '',
-    `# Horizon ${version}`,
-    '',
-    `**Released on ${date}**`,
-    '',
-    `Download [here](https://horizn.moe/download.html?ver=v${version}).`,
-    '',
-    body,
-    '',
-  ].join('\n');
+  pages.push({
+    file: `v${version}.md`,
+    content: [
+      '---',
+      `description: Changelog for Horizon v${version}. New features, changes, and bug fixes.`,
+      '---',
+      '',
+      `# Horizon ${version}`,
+      '',
+      `**Released on ${date}**`,
+      '',
+      `Download [here](https://horizn.moe/download.html?ver=v${version}).`,
+      '',
+      body,
+      '',
+    ].join('\n'),
+  });
+}
 
-  writeFileSync(join(OUT_DIR, `v${version}.md`), content, 'utf8');
-  console.log(`  wrote v${version}.md`);
-  written++;
+if (!pages.length) {
+  console.error('No version sections found in changelog, check the format.');
+  process.exit(1);
+}
+
+for (const file of existingPages()) rmSync(join(OUT_DIR, file));
+mkdirSync(OUT_DIR, { recursive: true });
+
+for (const { file, content } of pages) {
+  writeFileSync(join(OUT_DIR, file), content, 'utf8');
+  console.log(`  wrote ${file}`);
 }
 
 console.log(
-  `\nDone! ${written} changelog file(s) written to src/docs/changelogs/.`,
+  `\nDone! ${pages.length} changelog file(s) written to src/docs/changelogs/.`,
 );
