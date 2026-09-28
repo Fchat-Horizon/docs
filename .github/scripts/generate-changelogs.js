@@ -33,6 +33,7 @@ const raw = await fetch(CHANGELOG_URL).then((r) => {
 });
 
 const VERSION_HEADING = /^## \[(\d+\.\d+\.\d+)\] - (\d{4}-\d{2}-\d{2})[^\n]*/m;
+const LINK_REFERENCE = /^\[[^\]]+\]:\s+\S+\s*$/gm;
 // ^ Split on every heading so prerelease sections don't fold into the stable page above them.
 const sections = raw
   .split(/^(?=## \[)/m)
@@ -53,7 +54,10 @@ for (const section of sections) {
   const version = match[1];
   const date = match[2];
   const body = rewriteRepoLinks(
-    section.replace(/^## \[\d+\.\d+\.\d+\][^\n]*\n/, '').trim(),
+    section
+      .replace(/^## \[\d+\.\d+\.\d+\][^\n]*\n/, '')
+      .replace(LINK_REFERENCE, '')
+      .trim(),
   );
 
   const content = [
