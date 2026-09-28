@@ -33,8 +33,9 @@ const raw = await fetch(CHANGELOG_URL).then((r) => {
 });
 
 const VERSION_HEADING = /^## \[(\d+\.\d+\.\d+)\] - (\d{4}-\d{2}-\d{2})[^\n]*/m;
+// ^ Split on every heading so prerelease sections don't fold into the stable page above them.
 const sections = raw
-  .split(/(?=^## \[\d+\.\d+\.\d+\])/m)
+  .split(/^(?=## \[)/m)
   .filter((s) => VERSION_HEADING.test(s));
 
 if (!sections.length) {
