@@ -9,6 +9,7 @@ function getChangelogSidebarItems() {
   return fs
     .readdirSync(changelogDir)
     .filter((file) => file.endsWith('.md'))
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
     .map((file) => {
       const name = file.replace(/\.md$/, '');
       const text = name
