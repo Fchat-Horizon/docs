@@ -34,11 +34,21 @@ function existingPages() {
 }
 
 console.log(`Fetching changelog from ${CHANGELOG_URL} …`);
-const raw = await fetch(CHANGELOG_URL).then((r) => {
-  if (!r.ok)
-    throw new Error(`Failed to fetch changelog: ${r.status} ${r.statusText}`);
-  return r.text();
-});
+let raw;
+try {
+  raw = await fetch(CHANGELOG_URL).then((r) => {
+    if (!r.ok)
+      throw new Error(`Failed to fetch changelog: ${r.status} ${r.statusText}`);
+    return r.text();
+  });
+} catch (err) {
+  // * Offline local dev reuses existing pages; CI must fail.
+  if (!process.env.CI && existingPages().length) {
+    console.warn(`${err.message}\nKeeping existing changelog pages.`);
+    process.exit(0);
+  }
+  throw err;
+}
 
 // ^ Split on every heading so prerelease sections don't fold into the stable page above them.
 const sections = raw.split(/^(?=## \[)/m);
