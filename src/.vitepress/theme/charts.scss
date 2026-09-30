@@ -1,0 +1,75 @@
+.chart-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.chart-segmented {
+  display: inline-flex;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  overflow: hidden;
+
+  button {
+    padding: 4px 12px;
+    color: var(--vp-c-text-2);
+    transition: background-color 120ms ease;
+
+    & + button {
+      border-left: 1px solid var(--vp-c-divider);
+    }
+
+    &:hover {
+      background: var(--vp-c-default-soft);
+    }
+
+    &[aria-pressed='true'] {
+      background: var(--vp-c-brand-soft);
+      color: var(--vp-c-text-1);
+      font-weight: 600;
+    }
+  }
+}
+
+.chart-toggle {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+}
+
+.chart-caption {
+  min-height: 48px;
+  margin: 12px 0 8px;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--vp-c-text-2);
+}
+
+.chart-canvas {
+  position: relative;
+  height: 320px;
+
+  canvas {
+    cursor: crosshair;
+  }
+}
+
+.chart-table {
+  margin-top: 4px;
+  font-size: 14px;
+
+  summary {
+    cursor: pointer;
+    color: var(--vp-c-text-2);
+  }
+
+  table {
+    display: table;
+    width: 100%;
+    font-variant-numeric: tabular-nums;
+  }
+}

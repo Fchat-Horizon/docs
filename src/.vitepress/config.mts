@@ -143,6 +143,7 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Docs', link: '/docs/' },
       { text: 'FAQ', link: '/docs/faq' },
+      { text: 'Stats', link: '/stats' },
       { text: 'Changelogs', items: getNavChangelogItems() },
     ],
     logo: '/assets/images/icon.png',
