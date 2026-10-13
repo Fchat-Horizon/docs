@@ -96,11 +96,11 @@ Our repository's default branch is `development`, which is not strictly guarante
 
 1. Download the `.tar.gz` for your architecture from the [latest release](https://github.com/Fchat-Horizon/Horizon/releases/latest).
    Look for `F-Chat.Horizon-*-linux-x64.tar.gz` (x64) or `F-Chat.Horizon-*-linux-arm64.tar.gz` (arm64).
-2. Extract and run (replace "`<arch>`" with the architecture from the downloaded filename):
+2. Extract and run (replace "`<version>`" and "`<arch>`" with the values from the downloaded filename):
    ```bash
-   tar -xzf F-Chat.Horizon-linux-<arch>.tar.gz
-   cd F-Chat.Horizon-linux-<arch>
-   ./F-Chat.Horizon
+   tar -xzf F-Chat.Horizon-<version>-linux-<arch>.tar.gz
+   cd F-Chat.Horizon-<version>-linux-<arch>
+   ./horizon-electron
    ```
 
 #### Arch-based (AUR)
