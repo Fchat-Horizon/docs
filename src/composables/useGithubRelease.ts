@@ -1,8 +1,11 @@
 import { ref, watch, onMounted, type Ref } from 'vue';
 
-interface ReleaseAsset {
+export interface ReleaseAsset {
   name: string;
   browser_download_url: string;
+  size: number;
+  // * "sha256:<hex>"; null on assets uploaded before GitHub started computing digests
+  digest: string | null;
 }
 
 interface GithubRelease {
@@ -84,5 +87,9 @@ export function useGithubRelease(
     return `https://github.com/${repo}/releases/download/${downloadVersion.value}/${assetPrefix}${ver}${suffix}`;
   }
 
-  return { downloadVersion, releaseAssets, assetUrl };
+  function findAsset(suffix: string): ReleaseAsset | undefined {
+    return releaseAssets.value.find((a) => a.name.endsWith(suffix));
+  }
+
+  return { downloadVersion, releaseAssets, assetUrl, findAsset };
 }
