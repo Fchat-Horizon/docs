@@ -122,6 +122,53 @@ Our repository's default branch is `development`, which is not strictly guarante
   makepkg -si
   ```
 
+## Portable
+
+Starting with version 2.4.2, Horizon is also available as a portable build for Windows and Linux. A portable copy keeps its settings, logs, caches and backups in a `horizon-data` folder next to the app instead of your user profile, so you can run it from a USB stick or move it between computers by copying a single folder.
+
+> [!NOTE]
+> Portable builds aren't available for macOS.
+
+### Windows
+
+1. Download `F-Chat.Horizon-*-win-x64-portable.zip` (x64) or `F-Chat.Horizon-*-win-arm64-portable.zip` (arm64) from the [download](../../download) page or the [releases page](https://github.com/Fchat-Horizon/Horizon/releases).
+2. Create a new folder wherever you want Horizon to live, and extract the zip into it. The zip doesn't contain a top-level folder of its own.
+3. Run `Horizon.exe`.
+
+### Linux
+
+1. Download `F-Chat.Horizon-*-linux-x86_64-portable.tar.gz` (x64) or `F-Chat.Horizon-*-linux-arm64-portable.tar.gz` (arm64) from the [download](../../download) page or the [releases page](https://github.com/Fchat-Horizon/Horizon/releases).
+2. Extract it, which creates a `Horizon` folder containing the AppImage and its `horizon-data` folder, then run the AppImage:
+   ```bash
+   tar -xzf F-Chat.Horizon-*-linux-<arch>-portable.tar.gz
+   cd Horizon
+   ./F-Chat.Horizon-*.AppImage
+   ```
+
+> [!WARNING]
+> If you use AppImageLauncher, it may offer to move the AppImage into your Applications folder on first launch. Decline, or Horizon will lose track of its `horizon-data` folder and start in normal mode.
+
+### How portable mode works
+
+Horizon checks for a folder named `horizon-data` next to the app when it starts. If it finds one, it runs in portable mode. If you delete or rename that folder, the next launch uses the normal data location from [this table](moving-from-rising#folder-locations) instead.
+
+A fresh portable copy starts empty. Unlike a normal install, it won't offer to import F-Chat or Rising data on first launch, so the chat data on whichever computer you plug into doesn't end up on your USB stick by accident. To bring logs over yourself, use the [exporter and importer](../exporter-importer).
+
+If your log folder is inside `horizon-data` (the default), Horizon stores its location as a relative path, so it keeps working when the drive letter or mount point changes.
+
+### Updating
+
+- **Linux:** the portable AppImage updates itself like the regular AppImage does.
+- **Windows:** portable copies don't update automatically. Download the new zip, extract it to a new folder, then move your `horizon-data` folder into it, replacing the one that comes with the zip.
+
+### Known limitations
+
+A few files are still written outside the `horizon-data` folder:
+
+- Temporary files used while syncing
+- The AppImage updater's download cache in `~/.cache` (Linux)
+- `~/.pki/nssdb`, which Chromium creates on Linux
+
 ## From Source
 
 If you want to compile and install Horizon from the source code yourself, please see the build and packaging instructions in the [contributing document](../contributing).

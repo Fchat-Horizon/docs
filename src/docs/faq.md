@@ -45,7 +45,7 @@ The full list of additional features and quality of life changes is probably way
 
 ## How do I use it? Which platforms are supported?
 
-Right now we have versions for Windows, macOS and Linux. These are standalone apps that you’d need to install on your computer. Check out our installation guide [here](guides/install).
+Right now we have versions for Windows, macOS and Linux. These are standalone apps that you install on your computer, though Windows and Linux also have [portable builds](guides/install#portable) you can run from any folder or USB stick. Check out our installation guide [here](guides/install).
 
 We are planning on making a version for Android, and maaaaaybe an iOS version too, but we can’t give an ETA for when this mobile version will be released.
 

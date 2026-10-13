@@ -26,6 +26,8 @@ By default, Horizon stores its data in the following folders:
 | MacOS                | `~/Library/Application Support/horizon-electron` |
 | Linux                | `~/.config/horizon-electron`                     |
 
+[Portable copies](install#portable) of Horizon use the `horizon-data` folder next to the app instead.
+
 These folders might be hidden by default, so you may need to enable a setting to display hidden folders in your file explorer.
 
 > [!INFO]
