@@ -81,9 +81,9 @@ import solsticeBanner from "./componets/solsticeBanner.vue";
 <solsticeBanner />
 
 <style lang="scss">
-$pretty-gradient: linear-gradient(120deg, #6f4bb0 30%, #faae7b 100%);
+$pretty-gradient: linear-gradient(120deg, #b63f53 30%, #eebe6e 100%);
 $love-gradient: linear-gradient(120deg, #ff8fb3 20%, #ff476f 60%, #c7172f 100%);
-$pretty-shadow: rgba(250,174,123,0.35);
+$pretty-shadow: rgba(238,190,110,0.35);
 $love-shadow-1: rgba(255,79,120,0.28);
 $love-shadow-2: rgba(199,23,47,0.12);
 $love-shadow-hover-1: rgba(255,79,120,0.45);

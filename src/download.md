@@ -67,7 +67,7 @@ onMounted(() => {
 </div>
 
 <style lang="scss">
-$dl-gradient: linear-gradient(120deg, #6f4bb0 30%, #faae7b 100%);
+$dl-gradient: linear-gradient(120deg, #b63f53 30%, #eebe6e 100%);
 
 .download-page {
   max-width: 740px;
